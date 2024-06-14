@@ -1,0 +1,22 @@
+﻿<XtraSerializer version="20.1.17.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" ShowPageBreaks="false" SelectedStencils="TemplateDesigner, DecorativeShapes, SoftwareIcons, ArrowShapes, SDLDiagramShapes, BasicFlowchartShapes, BasicShapes">
+      <Children>
+        <Item1 Position="160,98.46875" Size="210,261.53125" Anchors="Left, Top" StrokeThickness="0" Stroke="#00FFFFFF" ThemeStyleId="Variant1" ConnectionPoints="0.5,0 1,0.5 0.5,1 0,0.5" Shape="StandardContainers.Classic" ShowHeader="true" ItemKind="DiagramContainer" Header="[0] ServerName" Tag_type="System.String" Tag=" " CanCopyWithoutParent="true" MoveWithSubordinates="true" ItemsCanDeleteWithoutParent="false" ItemsCanCopyWithoutParent="false" ItemsCanAttachConnectorBeginPoint="false" ItemsCanSnapToOtherItems="false" ItemsCanSnapToThisItem="false" ItemsCanAttachConnectorEndPoint="false" ItemsCanChangeParent="false" ItemsCanSelect="false" ItemsCanResize="false" ItemsCanRotate="false" ItemsCanEdit="false" ItemsCanMove="false" CanAddItems="false" DragMode="ByAnyPoint">
+          <Children>
+            <Item1 Position="20,3.814697265625E-06" Size="190,20" Anchors="Left, Top" Background="#00FFFFFF" Foreground="#FF000000" StrokeThickness="0" Stroke="#00FFFFFF" ItemKind="DiagramShape" CanDeleteWithoutParent="false" CanCopyWithoutParent="false" CanSelect="false" CanMove="false" CanAttachConnectorBeginPoint="false" CanAttachConnectorEndPoint="false" CanChangeParent="false" CanResize="false" MoveWithSubordinates="true" CanRotate="false" CanEdit="false">
+              <Bindings>
+                <Item1 PropertyName="Content" Expression="Description" />
+              </Bindings>
+            </Item1>
+            <Item2 Size="15,20" Anchors="Left, Top" Stroke="#00FFFFFF" ForegroundId="Black" ItemKind="DiagramImage" CanDeleteWithoutParent="false" CanCopyWithoutParent="false" CanSelect="false" CanMove="false" CanAttachConnectorBeginPoint="false" CanAttachConnectorEndPoint="false" CanChangeParent="false" CanResize="false" MoveWithSubordinates="true" CanRotate="false">
+              <Bindings>
+                <Item1 PropertyName="Image" Expression="Picture" />
+              </Bindings>
+            </Item2>
+          </Children>
+        </Item1>
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

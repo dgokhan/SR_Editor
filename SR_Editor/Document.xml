@@ -1,0 +1,24 @@
+﻿<XtraSerializer version="20.1.17.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" CanvasSizeMode="Fill" ShowGrid="false" ShowRulers="false" ShowPageBreaks="false" SelectedStencils="BasicShapes, BasicFlowchartShapes, SDLDiagramShapes, DecorativeShapes, SoftwareIcons, ArrowShapes">
+      <Children>
+        <Item1 Position="-250,10" Size="200,200" Padding="8,8,8,8" Shape="StandardContainers.Banner" Header="Auth" ShowHeader="true" HeaderPadding="8,8,8,8" ItemKind="DiagramContainer" />
+        <Item2 Position="-4,10" Size="1149.03002929688,670" Padding="8,8,8,8" Shape="StandardContainers.Banner" Header="[1] Ephesus" ShowHeader="true" HeaderPadding="8,8,8,8" ItemKind="DiagramContainer">
+          <Children>
+            <Item1 Position="34,14.4687538146973" Size="216,120" Padding="8,8,8,8" Shape="StandardContainers.Classic" Header="Database Server" ShowHeader="true" HeaderPadding="8,8,8,8" ItemKind="DiagramContainer" />
+            <Item2 Position="0,154.46875" Size="1033.1181640625,420" Padding="8,8,8,8" Shape="StandardContainers.Classic" Header="Game Server" ShowHeader="true" HeaderPadding="8,8,8,8" ItemKind="DiagramContainer">
+              <Children>
+                <Item1 Size="335.090911865234,282.46875" Padding="8,8,8,8" Shape="StandardContainers.Classic" Header="Channel 1" ShowHeader="true" HeaderPadding="8,8,8,8" ItemKind="DiagramContainer">
+                  <Children>
+                    <Item1 Position="0,58.9375114440918" Size="309.090911865234,170" Padding="8,8,8,8" Shape="StandardContainers.Classic" Header="Channel 1" ShowHeader="true" HeaderPadding="8,8,8,8" ItemKind="DiagramContainer" />
+                  </Children>
+                </Item1>
+                <Item2 Position="458,0" Size="254,170" Padding="8,8,8,8" Shape="StandardContainers.Classic" Header="Channel 2" ShowHeader="true" HeaderPadding="8,8,8,8" ItemKind="DiagramContainer" />
+              </Children>
+            </Item2>
+          </Children>
+        </Item2>
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

@@ -1,0 +1,2377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53B1FE48-9D33-4B42-99AA-E91E53178AFC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SR_Editor</RootNamespace>
+    <AssemblyName>SR_Editor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://51.68.178.17:5555/</InstallUrl>
+    <UpdateUrl>http://51.68.178.17:5555/</UpdateUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BG_SA</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>076EBB4F1B7EF6352793B444131D305C943FAFE4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SR_Editor_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.2.0.35\lib\net461\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.FluentMap, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.FluentMap.1.8.0\lib\net451\Dapper.FluentMap.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v20.1.Core, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDiagram.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Extensions, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroOrm.Dapper.Repositories, Version=1.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicroOrm.Dapper.Repositories.1.14.1\lib\net461\MicroOrm.Dapper.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.3\lib\netstandard2.0\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ClientOverride.cs" />
+    <Compile Include="Api\LoginResultOk.cs" />
+    <Compile Include="Api\RoyaleSupportApi.cs" />
+    <Compile Include="BgDatabase\Addons\CodeGen\BGAddonCodeGen.cs" />
+    <Compile Include="BgDatabase\Addons\Diagram\BGAddonDiagram.cs" />
+    <Compile Include="BgDatabase\Addons\LazyLoad\BGAddonLazyLoad.cs" />
+    <Compile Include="BgDatabase\Addons\LazyLoad\BGLazyLoadMetaLoader.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\BGAddonLiveUpdate.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateContext.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateDataProcessor.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateLog.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateValueResolver.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceA.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceChartsAPI.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceExcelExport.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceGoogleSheetsAPI.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceUrls.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateSourceTypeEnum.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Loader\BGLiveUpdateLoaderA.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Loader\BGLiveUpdateLoaderUnityWebRequest.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Loader\BGLiveUpdateLoaderWebClient.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateHttpMethodEnum.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateUrl.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateUrls.cs" />
+    <Compile Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateUrlTypeEnum.cs" />
+    <Compile Include="BgDatabase\Addons\Modding\BGAddonModding.cs" />
+    <Compile Include="BgDatabase\Addons\Modding\BGModdingMetaProtection.cs" />
+    <Compile Include="BgDatabase\Addons\Modding\BGModdingRepoProtection.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\BGAddonMT.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldCached.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnum.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnumA.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnumByte.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnumShort.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldManyTablesRelationMultiple.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldManyTablesRelationSingle.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldNested.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldRelationMultiple.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldRelationSingle.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Repo\BGMTEntity.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Repo\BGMTField.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Repo\BGMTFieldFactory.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Repo\BGMTMeta.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Repo\BGMTMetaUpdatable.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Repo\BGMTRepo.cs" />
+    <Compile Include="BgDatabase\Addons\MultiThreading\Service\BGMTService.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\BGAddonPartition.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\BGAddonPartition_Config.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\BGAddonPartition_Horizontal.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\BGAddonPartition_LoadHandles.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\BGAddonPartition_Static.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\BGAddonPartition_Vertical.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelA.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelDefault.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelI.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelNested.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Meta\BGPartitionFieldTypeEnum.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Misc\BGPartitionSnapshot.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Partition\BGPartitionModelA.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Partition\BGPartitionModelDefault.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Partition\BGPartitionModelMain.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Partition\BGPartitionsModel.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Provider\BGMetaPartitionModelProvider.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Save\BGPartitionSaveContext.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Save\BGPartitionSaveModel.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Save\BGPartitionSaveProcessor.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Vertical\BGPartitionSaveVerticalProvider.cs" />
+    <Compile Include="BgDatabase\Addons\Partition\Vertical\BGPartitionVerticalStructure.cs" />
+    <Compile Include="BgDatabase\Addons\SaveLoad\BGAddonSaveLoad.cs" />
+    <Compile Include="BgDatabase\Addons\SaveLoad\BGSaveLoadAddonLoadContext.cs" />
+    <Compile Include="BgDatabase\Addons\SaveLoad\BGSaveLoadAddonSaveContext.cs" />
+    <Compile Include="BgDatabase\Addons\SaveLoad\BGSaveLoadEventArgsCellChanged.cs" />
+    <Compile Include="BgDatabase\Addons\SaveLoad\BGSaveLoadEventArgsEntityChanged.cs" />
+    <Compile Include="BgDatabase\Addons\SaveLoad\BGSaveLoadEventsManager.cs" />
+    <Compile Include="BgDatabase\Addons\Settings\BGAddonSettings.cs" />
+    <Compile Include="BgDatabase\Addons\Settings\BGEncryptor.cs" />
+    <Compile Include="BgDatabase\Common\BGAttribute.cs" />
+    <Compile Include="BgDatabase\Common\BGAttributeWithManager.cs" />
+    <Compile Include="BgDatabase\Common\BGConfigurableBinaryI.cs" />
+    <Compile Include="BgDatabase\Common\BGConfigurableI.cs" />
+    <Compile Include="BgDatabase\Common\BGException.cs" />
+    <Compile Include="BgDatabase\Common\BGId.cs" />
+    <Compile Include="BgDatabase\Common\BGIndexableI.cs" />
+    <Compile Include="BgDatabase\Common\BGObjectI.cs" />
+    <Compile Include="BgDatabase\Common\BGObjectWithNameI.cs" />
+    <Compile Include="BgDatabase\Common\BGPlugin.cs" />
+    <Compile Include="BgDatabase\Common\BGStringFormatter.cs" />
+    <Compile Include="BgDatabase\Comp\ABundle.cs" />
+    <Compile Include="BgDatabase\Comp\AddComponentMenu.cs" />
+    <Compile Include="BgDatabase\Comp\AnimationCurve.cs" />
+    <Compile Include="BgDatabase\Comp\Application.cs" />
+    <Compile Include="BgDatabase\Comp\AssetBundle.cs" />
+    <Compile Include="BgDatabase\Comp\AudioClip.cs" />
+    <Compile Include="BgDatabase\Comp\AudioSource.cs" />
+    <Compile Include="BgDatabase\Comp\Bounds.cs" />
+    <Compile Include="BgDatabase\Comp\Color.cs" />
+    <Compile Include="BgDatabase\Comp\Color32.cs" />
+    <Compile Include="BgDatabase\Comp\Component.cs" />
+    <Compile Include="BgDatabase\Comp\Cursor.cs" />
+    <Compile Include="BgDatabase\Comp\Debug.cs" />
+    <Compile Include="BgDatabase\Comp\DefaultInterpolatedStringHandler.cs" />
+    <Compile Include="BgDatabase\Comp\DisallowMultipleComponent.cs" />
+    <Compile Include="BgDatabase\Comp\DownloadHandler.cs" />
+    <Compile Include="BgDatabase\Comp\D_Test.cs" />
+    <Compile Include="BgDatabase\Comp\Event.cs" />
+    <Compile Include="BgDatabase\Comp\EventType.cs" />
+    <Compile Include="BgDatabase\Comp\ExecuteInEditMode.cs" />
+    <Compile Include="BgDatabase\Comp\Font.cs" />
+    <Compile Include="BgDatabase\Comp\FontStyle.cs" />
+    <Compile Include="BgDatabase\Comp\GameObject.cs" />
+    <Compile Include="BgDatabase\Comp\Gradient.cs" />
+    <Compile Include="BgDatabase\Comp\GradientAlphaKey.cs" />
+    <Compile Include="BgDatabase\Comp\GradientColorKey.cs" />
+    <Compile Include="BgDatabase\Comp\GradientMode.cs" />
+    <Compile Include="BgDatabase\Comp\GUI.cs" />
+    <Compile Include="BgDatabase\Comp\GUIContent.cs" />
+    <Compile Include="BgDatabase\Comp\GUILayout.cs" />
+    <Compile Include="BgDatabase\Comp\GUILayoutOption.cs" />
+    <Compile Include="BgDatabase\Comp\GUILayoutUtility.cs" />
+    <Compile Include="BgDatabase\Comp\GUISettings.cs" />
+    <Compile Include="BgDatabase\Comp\GUISkin.cs" />
+    <Compile Include="BgDatabase\Comp\GUIStyle.cs" />
+    <Compile Include="BgDatabase\Comp\GUIUtility.cs" />
+    <Compile Include="BgDatabase\Comp\HideFlags.cs" />
+    <Compile Include="BgDatabase\Comp\HideInInspector.cs" />
+    <Compile Include="BgDatabase\Comp\ISerializationCallbackReceiver.cs" />
+    <Compile Include="BgDatabase\Comp\JsonUtility.cs" />
+    <Compile Include="BgDatabase\Comp\KeyCode.cs" />
+    <Compile Include="BgDatabase\Comp\Keyframe.cs" />
+    <Compile Include="BgDatabase\Comp\Material.cs" />
+    <Compile Include="BgDatabase\Comp\Mathf.cs" />
+    <Compile Include="BgDatabase\Comp\MeshRenderer.cs" />
+    <Compile Include="BgDatabase\Comp\MonoBehaviour.cs" />
+    <Compile Include="BgDatabase\Comp\Object.cs" />
+    <Compile Include="BgDatabase\Comp\PropertyAttribute.cs" />
+    <Compile Include="BgDatabase\Comp\Quaternion.cs" />
+    <Compile Include="BgDatabase\Comp\Ray.cs" />
+    <Compile Include="BgDatabase\Comp\Ray2D.cs" />
+    <Compile Include="BgDatabase\Comp\Rect.cs" />
+    <Compile Include="BgDatabase\Comp\RectOffset.cs" />
+    <Compile Include="BgDatabase\Comp\Resources.cs" />
+    <Compile Include="BgDatabase\Comp\RuntimePlatform.cs" />
+    <Compile Include="BgDatabase\Comp\Scene.cs" />
+    <Compile Include="BgDatabase\Comp\Screen.cs" />
+    <Compile Include="BgDatabase\Comp\ScriptableObject.cs" />
+    <Compile Include="BgDatabase\Comp\SerializeField.cs" />
+    <Compile Include="BgDatabase\Comp\Sprite.cs" />
+    <Compile Include="BgDatabase\Comp\SpriteAtlas.cs" />
+    <Compile Include="BgDatabase\Comp\SpriteRenderer.cs" />
+    <Compile Include="BgDatabase\Comp\System\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
+    <Compile Include="BgDatabase\Comp\TextAnchor.cs" />
+    <Compile Include="BgDatabase\Comp\TextAsset.cs" />
+    <Compile Include="BgDatabase\Comp\TextClipping.cs" />
+    <Compile Include="BgDatabase\Comp\TextMesh.cs" />
+    <Compile Include="BgDatabase\Comp\Texture.cs" />
+    <Compile Include="BgDatabase\Comp\Texture2D.cs" />
+    <Compile Include="BgDatabase\Comp\TooltipAttribute.cs" />
+    <Compile Include="BgDatabase\Comp\Transform.cs" />
+    <Compile Include="BgDatabase\Comp\UnityEngine.cs" />
+    <Compile Include="BgDatabase\Comp\UnityEvent`1.cs" />
+    <Compile Include="BgDatabase\Comp\UnityWebRequest.cs" />
+    <Compile Include="BgDatabase\Comp\Vector2.cs" />
+    <Compile Include="BgDatabase\Comp\Vector3.cs" />
+    <Compile Include="BgDatabase\Comp\Vector4.cs" />
+    <Compile Include="BgDatabase\Comp\WeightedMode.cs" />
+    <Compile Include="BgDatabase\Comp\WrapMode.cs" />
+    <Compile Include="BgDatabase\Comp\WWWForm.cs" />
+    <Compile Include="BgDatabase\Comp\__S.cs" />
+    <Compile Include="BgDatabase\Database\Core\Binary\BGBinaryBulkLoaderClass.cs" />
+    <Compile Include="BgDatabase\Database\Core\Binary\BGBinaryBulkLoaderStruct.cs" />
+    <Compile Include="BgDatabase\Database\Core\Binary\BGBinaryBulkRequestClass.cs" />
+    <Compile Include="BgDatabase\Database\Core\Binary\BGBinaryBulkRequestStruct.cs" />
+    <Compile Include="BgDatabase\Database\Core\Controller\BGControllerOnEntityAdd.cs" />
+    <Compile Include="BgDatabase\Database\Core\Factory\BGFieldTypeCodeFactory.cs" />
+    <Compile Include="BgDatabase\Database\Core\Factory\BGMetaTypeCodeFactory.cs" />
+    <Compile Include="BgDatabase\Database\Core\Misc\BGAssetsCache.cs" />
+    <Compile Include="BgDatabase\Database\Core\Misc\BGCloneContextField.cs" />
+    <Compile Include="BgDatabase\Database\Core\Misc\BGCloneContextMeta.cs" />
+    <Compile Include="BgDatabase\Database\Core\Misc\BGFieldWithCustomConfigI.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\BGAbstractEntityI.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\BGEntity.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\BGField.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\BGMetaObject.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\BGObject.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Entities.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Events.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Fields.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Indexes.cs" />
+    <Compile Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Keys.cs" />
+    <Compile Include="BgDatabase\Database\Core\Pointers\BGCellPointer.cs" />
+    <Compile Include="BgDatabase\Database\Core\Pointers\BGEntityPointer.cs" />
+    <Compile Include="BgDatabase\Database\Core\Pointers\BGFieldPointer.cs" />
+    <Compile Include="BgDatabase\Database\Core\Pointers\BGMetaPointer.cs" />
+    <Compile Include="BgDatabase\Database\Delta\BGRepoDelta.cs" />
+    <Compile Include="BgDatabase\Database\Delta\Misc\BGRepoDeltaUtils.cs" />
+    <Compile Include="BgDatabase\Database\Delta\Parts\BGRepoDeltaAdded.cs" />
+    <Compile Include="BgDatabase\Database\Delta\Parts\BGRepoDeltaDeleted.cs" />
+    <Compile Include="BgDatabase\Database\Delta\Parts\BGRepoDeltaUpdated.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGArrayI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGCustomSearchValueProviderI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedArrayA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedClassA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedClassListA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedEnumA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedListA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructArrayA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructListA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructNullableA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGListI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGStorable.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGStorageI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGStructI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Abstract\BGStructNullableI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Array\BGFieldArrayByte.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcAction.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcActionValue.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcBool.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcFloat.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcInt.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcList.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcObject.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcString.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcValue.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldCalcVarRef.cs" />
+    <Compile Include="BgDatabase\Database\Field\Calculated\BGFieldDictionaryBasedA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGCodedFieldContext.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGCodedFieldDelegateI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGCodedFieldDelegateLifeCycleContext.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGCodedFieldDelegateLifeCycleI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedBool.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedFloat.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedInt.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedObject.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedString.cs" />
+    <Compile Include="BgDatabase\Database\Field\Coded\BGFieldCodedValue.cs" />
+    <Compile Include="BgDatabase\Database\Field\Dictionary\BGFieldHashtable.cs" />
+    <Compile Include="BgDatabase\Database\Field\Enum\BGEnumTypeNameMapper.cs" />
+    <Compile Include="BgDatabase\Database\Field\Enum\BGFieldEnum.cs" />
+    <Compile Include="BgDatabase\Database\Field\Enum\BGFieldEnumA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Enum\BGFieldEnumByte.cs" />
+    <Compile Include="BgDatabase\Database\Field\Enum\BGFieldEnumList.cs" />
+    <Compile Include="BgDatabase\Database\Field\Enum\BGFieldEnumListA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Enum\BGFieldEnumShort.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\Primitive\BGFieldListBool.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\Primitive\BGFieldListDouble.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\Primitive\BGFieldListFloat.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\Primitive\BGFieldListGuid.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\Primitive\BGFieldListInt.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\Primitive\BGFieldListLong.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\Primitive\BGFieldListString.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListColor.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListQuaternion.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListVector2.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListVector3.cs" />
+    <Compile Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListVector4.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldBoolNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldByteNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldDoubleNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldFloatNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldGuidNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldIntNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldLongNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldShortNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldBool.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldByte.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldDecimal.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldDouble.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldFloat.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldGuid.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldInt.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldLong.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldShort.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldString.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldStringA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Primitive\BGFieldText.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGAbstractRelationI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldManyRelationsMultiple.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldManyRelationsSingle.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldNested.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldRelationA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldRelationMA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldRelationMultiple.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldRelationMultipleI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldRelationSA.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldRelationSingle.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldRelationSingleI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldViewRelationI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldViewRelationMultiple.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGFieldViewRelationSingle.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGManyTablesRelationI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Relation\BGRelationI.cs" />
+    <Compile Include="BgDatabase\Database\Field\Special\BGFieldEntityName.cs" />
+    <Compile Include="BgDatabase\Database\Field\Special\BGFieldId.cs" />
+    <Compile Include="BgDatabase\Database\Field\Special\BGFieldMetaReference.cs" />
+    <Compile Include="BgDatabase\Database\Field\Special\BGFieldPartitionMetaReference.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGAddressablesAssetI.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGAddressablesMonitor.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAssetA.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAssetArrayA.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAssetI.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAudioClip.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityFont.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityMaterial.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityObject.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityPrefab.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityScriptableObject.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnitySprite.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnitySpriteMultiple.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityTexture.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityTexture2d.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderA.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderAddressables.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderAssetBundle.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderResources.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldColorNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldQuaternionNullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldVector2Nullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldVector3Nullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldVector4Nullable.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldAnimationCurve2017.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldAnimationCurve2020.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldBounds.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldColor.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldGradient.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldKeyCode.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldQuaternion.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldRay.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldRay2d.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldRect.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldUnityClassA.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldVector2.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldVector3.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldVector4.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceA.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceListA.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceListMV.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceSingleA.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToEntityGo.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToEntityGoList.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToUnityObject.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToUnityObjectList.cs" />
+    <Compile Include="BgDatabase\Database\Field\UnityScene\BGSceneObjectReferenceI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Flow\BGCalcFlow.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Flow\BGCalcFlowContext.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Flow\BGCalcFlowEvents.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Flow\BGCalcFlowI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Flow\BGCalcVarsProvider.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Graph\BGCalcGraph.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Graph\BGCalcGraphTypeEnum.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\BGCalcControl.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\BGCalcControlInput.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\BGCalcControlOutput.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\BGCalcPort.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\BGCalcPortTypeEnum.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\BGCalcValueInput.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\BGCalcValueOutput.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcControlInputI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcControlOutputI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcPortI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcValueInputI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcValueOutputI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\Binary\BGCalcLoader.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\Binary\BGCalcSaver.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\Common\BGCalcLoadContext.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\Common\BGCalcSaveContext.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\String\BGCalcGraphModel.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\String\BGCalcLoaderString.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\String\BGCalcSaverString.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\String\BGCalcUnitModel.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\String\BGCalcUnitPortModel.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\String\BGCalcVarLiteModel.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Serialization\String\BGCalcVarModel.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCode.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeBGId.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeBool.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeByte.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeCalcAction.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeCell.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeComponent.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeControl.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeEntity.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeEntityRuntime.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeEnum.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeField.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeFloat.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeGameObject.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeInt.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeList.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeMeta.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeObject.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeRegistry.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeSByte.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeShort.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeSource.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeStateful.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeString.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeUShort.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeVector2.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeVector3.cs" />
+    <Compile Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeVector4.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcCell.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnit2ControlsA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitInitializable.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitLiteral.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitWithInPortsCount.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitWithSource.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\BGCalcDefinitionContext.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\BGCalcUnit.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\BGCalcUnitI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\BGCalcUnitLocationAttribute.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\BGCalcUnitRegistry.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitAnd.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitAndGroup.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitBoolParse.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOr.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOrExclusive.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOrGroup.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOrNegate.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Enum\BGCalcUnitEnumLiteral.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Enum\BGCalcUnitEnumToInt.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatAB.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatAbs.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatAdd.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatApproximately.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatCeil.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatCeilToInt.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatDivide.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatFloor.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatFloorToInt.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatMax.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatMin.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatModulo.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatMultiply.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatParse.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatPow.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatRoundToInt.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatSqrt.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatSubtract.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatGreater.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatGreaterOrEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatLess.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatLessOrEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstant.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantEpsilon.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantInfinity.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantInfinityNegative.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantNan.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantPi.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAcos.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAsin.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAtan.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAtan2.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatCos.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatDeg2Rad.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatRad2Deg.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatSin.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatTan.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntAB.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntAbs.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntAdd.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntDivide.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntMax.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntMin.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntModulo.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntMultiply.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntParse.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntSubtract.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntGreater.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntGreaterOrEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntLess.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntLessOrEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListAdd.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListAddRange.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListClear.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListContains.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListCount.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListCreate.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListGet.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListIndexOf.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListInsert.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListRemove.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListRemoveAt.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListSet.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitCast.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitChangeType.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitIsNull.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitNotEqual.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitNull.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitObjectToString.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringAdd.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringIndexOf.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringIsNullOrEmpty.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringJoin.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringJoin2.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringLength.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringSplit.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringSubString.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringSubString2.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringToLower.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringToUpper.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringTrim.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbCount.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbGet.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbMetaBasedA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbRowBasedA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbSet.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitSourceEnum.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellGetValue.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellGetValue2.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellSetValue.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellSetValue2.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitConstructCell.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitDeconstructCell.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitCreateEntity.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitDeleteEntity.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitGetEntity.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitGetEntityMeta.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Field\BGCalcUnitGetField.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Field\BGCalcUnitGetFieldMeta.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitCountEntities.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitGetMeta.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitGetMetaEntities.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitGetMetaFields.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Relation\BGCalcUnitGetByMultipleRelation.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Relation\BGCalcUnitGetByRelationInbound.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Database\Generic\Relation\BGCalcUnitGetBySingleRelation.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitBreak.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitFor.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitForEach.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitIf.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitWhile.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Graph\BGCalcUnitGraphStart.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitGetCurrentLocale.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitGetLocalizedValue.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitLocalizationDelegateProvider.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitLocalizationI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitSetCurrentLocale.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionGetFieldOrProperty.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionGetStaticFieldOrProperty.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionSetFieldOrProperty.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionSetStaticFieldOrProperty.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitCallCalculated.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitDebug.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitGetCurrentEntity.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitGetCurrentGameObject.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitSetResult.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitVoid.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Unity\BGCalcUnitGetComponent.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Unity\BGCalcUnitGetComponents.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Unity\BGCalcUnitGetGameObject.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Variables\BGCalcUnitGetVar.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Variables\BGCalcUnitSetVar.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Units\Variables\BGCalcUnitVarA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVar.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarContainer.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarContainerBaseA.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarLite.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarLiteContainer.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarsLiteOwnerI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarsOwnerBaseI.cs" />
+    <Compile Include="BgDatabase\Database\Graph\Variables\BGCalcVarsOwnerI.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndex.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperator.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorBetween.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorEqual.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorGreater.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorGreaterOrEqual.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorLess.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorLessOrEqual.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorRange.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexOperatorTypeEnum.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexStorage.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexStorageItem.cs" />
+    <Compile Include="BgDatabase\Database\Index\BGIndexTypeEnum.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKey.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKeyStorage.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKeyStorageKey1.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKeyStorageKey2.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKeyStorageKey3.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKeyStorageKey4.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKeyStorageKeyI.cs" />
+    <Compile Include="BgDatabase\Database\Key\BGKeyStorageKeyN.cs" />
+    <Compile Include="BgDatabase\Database\Meta\Nested\BGMetaNested.cs" />
+    <Compile Include="BgDatabase\Database\Meta\Row\BGMetaRow.cs" />
+    <Compile Include="BgDatabase\Database\Meta\Row\BGMetaRowDuplication.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Addons\BGAddon.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Addons\BGRepoAddons.cs" />
+    <Compile Include="BgDatabase\Database\Repo\BGRepo.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\BGRepoBinary.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\Lib\BGBinaryReader.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\Lib\BGBinaryWriter.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\Lib\BGMultiThreadedLoader.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V1\BGRepoBinaryV1.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V2\BGRepoBinaryV2.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V3\BGRepoBinaryV3.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V4\BGRepoBinaryV4.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V5\BGRepoBinaryV5.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V6\BGRepoBinaryV6.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V7\BGRepoBinaryV7.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Binary\V8\BGRepoBinaryV8.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsA.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyChange.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyEntity.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyEntityBeforeAdded.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyEntityUpdated.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsBatch.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsEntitiesOrder.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsEntity.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsEntityUpdated.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsField.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventArgsMeta.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventsDelegatesHolder.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventsHolder.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGEventsPool.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Events\BGRepoEvents.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGBSAStuff.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGConfigForRepo.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepo.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepoCustom.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepoFile.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepoResources.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepoStreamingAssets.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Loader\BGRepoCustomLoaderModel.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Merge\BGMergeModeEnum.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Merge\BGMergerA.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Merge\BGMergerEntity.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Merge\BGMergerMeta.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Merge\BGMergeSettingsA.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Merge\BGMergeSettingsEntity.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Merge\BGMergeSettingsMeta.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Misc\BGRepoLoadingContext.cs" />
+    <Compile Include="BgDatabase\Database\Repo\Misc\BGRowRef.cs" />
+    <Compile Include="BgDatabase\Database\Store\BGArrayStore.cs" />
+    <Compile Include="BgDatabase\Database\Store\BGStoreField.cs" />
+    <Compile Include="BgDatabase\Database\Store\BGStoreFieldAdapter.cs" />
+    <Compile Include="BgDatabase\Database\Store\BGStoreFieldI.cs" />
+    <Compile Include="BgDatabase\Database\Store\BGStoreMeta.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGFieldValidator.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGFieldValidatorName.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGFieldValidatorNested.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGKeyValidator.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGMetaEntityValidator.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGMetaEntityValidatorNested.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGValidationLog.cs" />
+    <Compile Include="BgDatabase\Database\Validation\BGValidator.cs" />
+    <Compile Include="BgDatabase\Database\View\BGMetaView.cs" />
+    <Compile Include="BgDatabase\Database\View\BGMetaViewMappings.cs" />
+    <Compile Include="BgDatabase\Localization\Addon\BGAddonLocalization.cs" />
+    <Compile Include="BgDatabase\Localization\Addon\BGLocalizationCurrentLocale.cs" />
+    <Compile Include="BgDatabase\Localization\Addon\BGLocalizationDna.cs" />
+    <Compile Include="BgDatabase\Localization\Addon\BGLocalizationLoadingContext.cs" />
+    <Compile Include="BgDatabase\Localization\Addon\BGLocalizationReposCache.cs" />
+    <Compile Include="BgDatabase\Localization\Addon\BGLocalizationSaveManager.cs" />
+    <Compile Include="BgDatabase\Localization\Addon\BGLocalizationStructure.cs" />
+    <Compile Include="BgDatabase\Localization\DataBinding\BGDBLocaleFieldBinder.cs" />
+    <Compile Include="BgDatabase\Localization\DataBinding\BGDBLocaleFieldValueProvider.cs" />
+    <Compile Include="BgDatabase\Localization\Dna\BGDnaFieldLocalizationString.cs" />
+    <Compile Include="BgDatabase\Localization\Dna\BGDnaFieldLocalizationText.cs" />
+    <Compile Include="BgDatabase\Localization\Dna\BGDnaFieldLocalizedA.cs" />
+    <Compile Include="BgDatabase\Localization\Dna\BGDnaMetaLocalization.cs" />
+    <Compile Include="BgDatabase\Localization\Dna\BGDnaMetaLocalizationSettings.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Common\BGFieldLocalizationI.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Common\BGFieldLocalizationTypeCodeFactory.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleA.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleAssetA.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleAudioClip.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleI.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleMaterial.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleObject.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocalePrefab.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleSprite.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleString.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleStringA.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleText.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleTexture.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Locale\BGLocaleFieldAttribute.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedA.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedAssetA.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedAudioClip.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedI.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedMaterial.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedObject.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedPrefab.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedSprite.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedString.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedText.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedTexture.cs" />
+    <Compile Include="BgDatabase\Localization\Field\Localized\BGLocalizedFieldAttribute.cs" />
+    <Compile Include="BgDatabase\Localization\Graph\BGCalcUnitLocalizationDelegate.cs" />
+    <Compile Include="BgDatabase\Localization\Meta\BGMetaLocalization.cs" />
+    <Compile Include="BgDatabase\Localization\Meta\BGMetaLocalizationA.cs" />
+    <Compile Include="BgDatabase\Localization\Meta\BGMetaLocalizationSettings.cs" />
+    <Compile Include="BgDatabase\Localization\Meta\BGMetaLocalizationSingleValue.cs" />
+    <Compile Include="BgDatabase\Localization\Meta\BGMetaLocalizationTypeCodeFactory.cs" />
+    <Compile Include="BgDatabase\Localization\Partition\BGLocalizationPartitionLoadHandler.cs" />
+    <Compile Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocale.cs" />
+    <Compile Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalization.cs" />
+    <Compile Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalizationMainProvider.cs" />
+    <Compile Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalizationProvider.cs" />
+    <Compile Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalized.cs" />
+    <Compile Include="BgDatabase\Localization\Scene\BGLocalizationGoA.cs" />
+    <Compile Include="BgDatabase\MetaData.cs" />
+    <Compile Include="BgDatabase\Misc\Collection\BGHashtableForSerialization.cs" />
+    <Compile Include="BgDatabase\Misc\Collection\BGHashtableIdKey.cs" />
+    <Compile Include="BgDatabase\Misc\Collection\BGIdDictionary.cs" />
+    <Compile Include="BgDatabase\Misc\Collection\BGIdList.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\BGDna.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\BGDnaDescriptor.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\BGDnaField.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\BGDnaMeta.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\BGDnaCreatable.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\BGDnaCreatableField.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\BGDnaCreatableMeta.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\Field\BGDnaFieldNested.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\Field\BGDnaFieldRelationMultiple.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\Field\BGDnaFieldRelationSingle.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\Meta\BGDnaMetaNested.cs" />
+    <Compile Include="BgDatabase\Misc\Dna\Creatable\Meta\BGDnaMetaRow.cs" />
+    <Compile Include="BgDatabase\Misc\Misc\BGInterfaceFinder.cs" />
+    <Compile Include="BgDatabase\Misc\Misc\BGLocalizationUglyHacks.cs" />
+    <Compile Include="BgDatabase\Misc\Misc\BGLogger.cs" />
+    <Compile Include="BgDatabase\Misc\Misc\BGPrivate.cs" />
+    <Compile Include="BgDatabase\Misc\Misc\BGRepoConstants.cs" />
+    <Compile Include="BgDatabase\Misc\Misc\BGRichText.cs" />
+    <Compile Include="BgDatabase\Misc\Pool\BGListPoolDefault.cs" />
+    <Compile Include="BgDatabase\Misc\Pool\BGObjectPool.cs" />
+    <Compile Include="BgDatabase\Misc\Pool\BGObjectPoolDefault.cs" />
+    <Compile Include="BgDatabase\Misc\Pool\BGObjectPoolNTS.cs" />
+    <Compile Include="BgDatabase\Misc\Pool\BGSharedListValue.cs" />
+    <Compile Include="BgDatabase\Misc\Pool\BGSharedObjectValue.cs" />
+    <Compile Include="BgDatabase\Misc\Util\BGCodeGenUtils.cs" />
+    <Compile Include="BgDatabase\Misc\Util\BGUtil.cs" />
+    <Compile Include="BgDatabase\Misc\Util\BGUtilForTest.cs" />
+    <Compile Include="BgDatabase\Scene\BGDatabasePreloaderGo.cs" />
+    <Compile Include="BgDatabase\Scene\BGEntityGo.cs" />
+    <Compile Include="BgDatabase\Scene\BGMainThreadRunner.cs" />
+    <Compile Include="BgDatabase\Scene\BGWithId.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Implementation\BGDBA.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Implementation\BGDBAutoMapRegistry.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Implementation\BGDBField.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Implementation\BGDBGraph.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Implementation\BGDBTemplate.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Implementation\BGFBFuntion.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Implementation\BGFBFuntionToString.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderBatchGo.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderComponentsGo.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderDatabaseGo.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderFieldGo.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderGoA.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderGraphGo.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderRowGo.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderSingleGoA.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderTemplateGo.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinder.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderContext.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderField.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderRoot.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderStatic.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextProcessor.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextProcessorContext.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextTagProcessor.cs" />
+    <Compile Include="BgDatabase\Scene\DataBinding\Template\BGDBTextTagProcessorField.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGDatabaseMonitorGo.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGMonitorPage.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGMonitorPageHome.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGMonitorPageLiveUpdateStatus.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRTDialog.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRTDropDownList.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRTPopup.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRTScrollView.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRTStyle.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRTUsing.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRTUtilities.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRuntimeWindow.cs" />
+    <Compile Include="BgDatabase\Scene\Monitor\BGRuntimeWindowResizer.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGAttributeReferenceListAllowDuplicates.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGCellReference.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGEntityListReference.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGEntityReference.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGFieldReference.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGIndexReference.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGKeyReference.cs" />
+    <Compile Include="BgDatabase\Scene\Reference\BGMetaReference.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGDataSource.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGDsFileBased.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGRowsOrder.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGSyncA.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGSyncDataStructure.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGSyncDisabledConfig.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGSyncDuplicateEntitiesMonitor.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGSyncIdConfig.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGSyncNameMapConfig.cs" />
+    <Compile Include="BgDatabase\Sync\Common\BGSyncUtil.cs" />
+    <Compile Include="BgDatabase\Sync\Excel\BGDsExcel.cs" />
+    <Compile Include="BgDatabase\Sync\Excel\BGExcelServiceI.cs" />
+    <Compile Include="BgDatabase\Sync\GoogleSheets\BGDsGoogleSheets.cs" />
+    <Compile Include="BgDatabase\Sync\GoogleSheets\BGGoogleSheetServiceI.cs" />
+    <Compile Include="BgDatabase\Sync\Info\BGAddonSheetInfo.cs" />
+    <Compile Include="BgDatabase\Sync\Info\BGBookInfo.cs" />
+    <Compile Include="BgDatabase\Sync\Info\BGEntitySheetDataInfo.cs" />
+    <Compile Include="BgDatabase\Sync\Info\BGEntitySheetInfo.cs" />
+    <Compile Include="BgDatabase\Sync\Info\BGFieldSheetInfo.cs" />
+    <Compile Include="BgDatabase\Sync\Info\BGMetaSheetInfo.cs" />
+    <Compile Include="BgDatabase\Sync\Info\BGSheetInfoA.cs" />
+    <Compile Include="BgDatabase\Sync\Json\BGDsJson.cs" />
+    <Compile Include="BgDatabase\Sync\Json\BGJson.cs" />
+    <Compile Include="BgDatabase\Sync\Json\BGJsonFormatEnum.cs" />
+    <Compile Include="BgDatabase\Sync\Json\Classic\BGJsonReader.cs" />
+    <Compile Include="BgDatabase\Sync\Json\Classic\BGJsonRepoModel.cs" />
+    <Compile Include="BgDatabase\Sync\Json\Classic\BGJsonWriter.cs" />
+    <Compile Include="BgDatabase\Sync\Json\Compact\BGJsonCompactFieldBased.cs" />
+    <Compile Include="BgDatabase\Sync\Json\Compact\BGJsonCompactReader.cs" />
+    <Compile Include="BgDatabase\Sync\Json\Compact\BGJsonCompactRowBased.cs" />
+    <Compile Include="BgDatabase\Sync\Json\Compact\BGJsonCompactWriter.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolver.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdMT.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdMTMV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdMTSV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdST.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdSTMV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdSTSV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldMT.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldMTMV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldMTSV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldST.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldSTMV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldSTSV.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationsConfig.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRelationsResolver.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRowResolver.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRowResolverField.cs" />
+    <Compile Include="BgDatabase\Sync\Relations\BGSyncRowResolverId.cs" />
+    <Compile Include="BgDatabase\ThirdParty\LiteCsvParser\LiteCsvParser.cs" />
+    <Compile Include="BgDatabase\ThirdParty\SimpleJson\SimpleJSON.cs" />
+    <Compile Include="EditorApplication\Account\AccountModule.cs" />
+    <Compile Include="EditorApplication\Account\Action\AccountActionModule.cs" />
+    <Compile Include="EditorApplication\Account\Query\AccountQueryModule.cs" />
+    <Compile Include="EditorApplication\Character\Action\CharacterActionModule.cs" />
+    <Compile Include="EditorApplication\Character\CharacterModule.cs" />
+    <Compile Include="EditorApplication\Character\Query\CharacterQueryModule.cs" />
+    <Compile Include="EditorApplication\RoyalePermissions.cs" />
+    <Compile Include="EditorApplication\SqlQuery\Action\SqlQueryActionModule.cs" />
+    <Compile Include="EditorApplication\SqlQuery\SqlQueryModule.cs" />
+    <Compile Include="EditorIslemSonuc.cs" />
+    <Compile Include="AkdenizTransactionScope.cs" />
+    <Compile Include="Controls\AkdenizLayoutControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <Content Include="bansheegz_database.bytes">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bansheegz_database_locale_tr.bytes">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="BgDatabase\Addons\CodeGen.meta" />
+    <None Include="BgDatabase\Addons\CodeGen\BGAddonCodeGen.cs.meta" />
+    <None Include="BgDatabase\Addons\Diagram.meta" />
+    <None Include="BgDatabase\Addons\Diagram\BGAddonDiagram.cs.meta" />
+    <None Include="BgDatabase\Addons\LazyLoad.meta" />
+    <None Include="BgDatabase\Addons\LazyLoad\BGAddonLazyLoad.cs.meta" />
+    <None Include="BgDatabase\Addons\LazyLoad\BGLazyLoadMetaLoader.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\BGAddonLiveUpdate.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Common.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateContext.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateDataProcessor.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateLog.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Common\BGLiveUpdateValueResolver.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\DataSource.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceA.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceChartsAPI.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceExcelExport.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceGoogleSheetsAPI.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateDataSourceUrls.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\DataSource\BGLiveUpdateSourceTypeEnum.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Loader.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Loader\BGLiveUpdateLoaderA.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Loader\BGLiveUpdateLoaderUnityWebRequest.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Loader\BGLiveUpdateLoaderWebClient.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Urls.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateHttpMethodEnum.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateUrl.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateUrls.cs.meta" />
+    <None Include="BgDatabase\Addons\LiveUpdate\Urls\BGLiveUpdateUrlTypeEnum.cs.meta" />
+    <None Include="BgDatabase\Addons\Modding.meta" />
+    <None Include="BgDatabase\Addons\Modding\BGAddonModding.cs.meta" />
+    <None Include="BgDatabase\Addons\Modding\BGModdingMetaProtection.cs.meta" />
+    <None Include="BgDatabase\Addons\Modding\BGModdingRepoProtection.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\BGAddonMT.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldCached.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnum.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnumA.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnumByte.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldEnumShort.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldManyTablesRelationMultiple.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldManyTablesRelationSingle.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldNested.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldRelationMultiple.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Field\BGMTFieldRelationSingle.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Repo.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Repo\BGMTEntity.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Repo\BGMTField.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Repo\BGMTFieldFactory.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Repo\BGMTMeta.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Repo\BGMTMetaUpdatable.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Repo\BGMTRepo.cs.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Service.meta" />
+    <None Include="BgDatabase\Addons\MultiThreading\Service\BGMTService.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition.meta" />
+    <None Include="BgDatabase\Addons\Partition\BGAddonPartition.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\BGAddonPartition_Config.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\BGAddonPartition_Horizontal.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\BGAddonPartition_LoadHandles.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\BGAddonPartition_Static.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\BGAddonPartition_Vertical.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Meta.meta" />
+    <None Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelA.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelDefault.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelI.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Meta\BGMetaPartitionModelNested.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Meta\BGPartitionFieldTypeEnum.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Misc.meta" />
+    <None Include="BgDatabase\Addons\Partition\Misc\BGPartitionSnapshot.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Partition.meta" />
+    <None Include="BgDatabase\Addons\Partition\Partition\BGPartitionModelA.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Partition\BGPartitionModelDefault.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Partition\BGPartitionModelMain.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Partition\BGPartitionsModel.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Provider.meta" />
+    <None Include="BgDatabase\Addons\Partition\Provider\BGMetaPartitionModelProvider.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Save.meta" />
+    <None Include="BgDatabase\Addons\Partition\Save\BGPartitionSaveContext.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Save\BGPartitionSaveModel.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Save\BGPartitionSaveProcessor.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Vertical.meta" />
+    <None Include="BgDatabase\Addons\Partition\Vertical\BGPartitionSaveVerticalProvider.cs.meta" />
+    <None Include="BgDatabase\Addons\Partition\Vertical\BGPartitionVerticalStructure.cs.meta" />
+    <None Include="BgDatabase\Addons\SaveLoad.meta" />
+    <None Include="BgDatabase\Addons\SaveLoad\BGAddonSaveLoad.cs.meta" />
+    <None Include="BgDatabase\Addons\SaveLoad\BGSaveLoadAddonLoadContext.cs.meta" />
+    <None Include="BgDatabase\Addons\SaveLoad\BGSaveLoadAddonSaveContext.cs.meta" />
+    <None Include="BgDatabase\Addons\SaveLoad\BGSaveLoadEventArgsCellChanged.cs.meta" />
+    <None Include="BgDatabase\Addons\SaveLoad\BGSaveLoadEventArgsEntityChanged.cs.meta" />
+    <None Include="BgDatabase\Addons\SaveLoad\BGSaveLoadEventsManager.cs.meta" />
+    <None Include="BgDatabase\Addons\Settings.meta" />
+    <None Include="BgDatabase\Addons\Settings\BGAddonSettings.cs.meta" />
+    <None Include="BgDatabase\Addons\Settings\BGEncryptor.cs.meta" />
+    <None Include="BgDatabase\Common\BGAttribute.cs.meta" />
+    <None Include="BgDatabase\Common\BGAttributeWithManager.cs.meta" />
+    <None Include="BgDatabase\Common\BGConfigurableBinaryI.cs.meta" />
+    <None Include="BgDatabase\Common\BGConfigurableI.cs.meta" />
+    <None Include="BgDatabase\Common\BGException.cs.meta" />
+    <None Include="BgDatabase\Common\BGId.cs.meta" />
+    <None Include="BgDatabase\Common\BGIndexableI.cs.meta" />
+    <None Include="BgDatabase\Common\BGObjectI.cs.meta" />
+    <None Include="BgDatabase\Common\BGObjectWithNameI.cs.meta" />
+    <None Include="BgDatabase\Common\BGPlugin.cs.meta" />
+    <None Include="BgDatabase\Common\BGStringFormatter.cs.meta" />
+    <None Include="BgDatabase\Database\Core.meta" />
+    <None Include="BgDatabase\Database\Core\Binary.meta" />
+    <None Include="BgDatabase\Database\Core\Binary\BGBinaryBulkLoaderClass.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Binary\BGBinaryBulkLoaderStruct.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Binary\BGBinaryBulkRequestClass.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Binary\BGBinaryBulkRequestStruct.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Controller.meta" />
+    <None Include="BgDatabase\Database\Core\Controller\BGControllerOnEntityAdd.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Factory.meta" />
+    <None Include="BgDatabase\Database\Core\Factory\BGFieldTypeCodeFactory.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Factory\BGMetaTypeCodeFactory.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Misc.meta" />
+    <None Include="BgDatabase\Database\Core\Misc\BGAssetsCache.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Misc\BGCloneContextField.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Misc\BGCloneContextMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Misc\BGFieldWithCustomConfigI.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\BGAbstractEntityI.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\BGEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\BGField.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\BGMetaObject.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\BGObject.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\Table.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Entities.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Events.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Fields.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Indexes.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Objects\Table\BGMetaEntity_Keys.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Pointers.meta" />
+    <None Include="BgDatabase\Database\Core\Pointers\BGCellPointer.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Pointers\BGEntityPointer.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Pointers\BGFieldPointer.cs.meta" />
+    <None Include="BgDatabase\Database\Core\Pointers\BGMetaPointer.cs.meta" />
+    <None Include="BgDatabase\Database\Delta.meta" />
+    <None Include="BgDatabase\Database\Delta\BGRepoDelta.cs.meta" />
+    <None Include="BgDatabase\Database\Delta\Misc.meta" />
+    <None Include="BgDatabase\Database\Delta\Misc\BGRepoDeltaUtils.cs.meta" />
+    <None Include="BgDatabase\Database\Delta\Parts.meta" />
+    <None Include="BgDatabase\Database\Delta\Parts\BGRepoDeltaAdded.cs.meta" />
+    <None Include="BgDatabase\Database\Delta\Parts\BGRepoDeltaDeleted.cs.meta" />
+    <None Include="BgDatabase\Database\Delta\Parts\BGRepoDeltaUpdated.cs.meta" />
+    <None Include="BgDatabase\Database\Field.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGArrayI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGCustomSearchValueProviderI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedArrayA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedClassA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedClassListA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedEnumA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedListA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructArrayA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructListA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGFieldCachedStructNullableA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGListI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGStorable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGStorageI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGStructI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Abstract\BGStructNullableI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Array.meta" />
+    <None Include="BgDatabase\Database\Field\Array\BGFieldArrayByte.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcAction.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcActionValue.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcBool.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcFloat.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcInt.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcList.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcObject.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcString.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcValue.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldCalcVarRef.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Calculated\BGFieldDictionaryBasedA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGCodedFieldContext.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGCodedFieldDelegateI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGCodedFieldDelegateLifeCycleContext.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGCodedFieldDelegateLifeCycleI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedBool.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedFloat.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedInt.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedObject.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedString.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Coded\BGFieldCodedValue.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Dictionary.meta" />
+    <None Include="BgDatabase\Database\Field\Dictionary\BGFieldHashtable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Enum.meta" />
+    <None Include="BgDatabase\Database\Field\Enum\BGEnumTypeNameMapper.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Enum\BGFieldEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Enum\BGFieldEnumA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Enum\BGFieldEnumByte.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Enum\BGFieldEnumList.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Enum\BGFieldEnumListA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Enum\BGFieldEnumShort.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive\BGFieldListBool.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive\BGFieldListDouble.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive\BGFieldListFloat.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive\BGFieldListGuid.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive\BGFieldListInt.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive\BGFieldListLong.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\Primitive\BGFieldListString.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\UnityPrimitive.meta" />
+    <None Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListColor.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListQuaternion.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListVector2.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListVector3.cs.meta" />
+    <None Include="BgDatabase\Database\Field\List\UnityPrimitive\BGFieldListVector4.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldBoolNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldByteNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldDoubleNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldFloatNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldGuidNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldIntNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldLongNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\PrimitiveNullable\BGFieldShortNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldBool.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldByte.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldDecimal.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldDouble.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldFloat.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldGuid.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldInt.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldLong.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldShort.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldString.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldStringA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Primitive\BGFieldText.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGAbstractRelationI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldManyRelationsMultiple.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldManyRelationsSingle.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldNested.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldRelationA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldRelationMA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldRelationMultiple.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldRelationMultipleI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldRelationSA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldRelationSingle.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldRelationSingleI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldViewRelationI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldViewRelationMultiple.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGFieldViewRelationSingle.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGManyTablesRelationI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Relation\BGRelationI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Special.meta" />
+    <None Include="BgDatabase\Database\Field\Special\BGFieldEntityName.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Special\BGFieldId.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Special\BGFieldMetaReference.cs.meta" />
+    <None Include="BgDatabase\Database\Field\Special\BGFieldPartitionMetaReference.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGAddressablesAssetI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGAddressablesMonitor.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAssetA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAssetArrayA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAssetI.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityAudioClip.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityFont.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityMaterial.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityObject.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityPrefab.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityScriptableObject.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnitySprite.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnitySpriteMultiple.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityTexture.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\BGFieldUnityTexture2d.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\Loader.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderAddressables.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderAssetBundle.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityAsset\Loader\BGAssetLoaderResources.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitiveNullable.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldColorNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldQuaternionNullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldVector2Nullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldVector3Nullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitiveNullable\BGFieldVector4Nullable.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldAnimationCurve2017.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldAnimationCurve2020.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldBounds.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldColor.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldGradient.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldKeyCode.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldQuaternion.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldRay.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldRay2d.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldRect.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldUnityClassA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldVector2.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldVector3.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityPrimitive\BGFieldVector4.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceListA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceListMV.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceSingleA.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToEntityGo.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToEntityGoList.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToUnityObject.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGFieldReferenceToUnityObjectList.cs.meta" />
+    <None Include="BgDatabase\Database\Field\UnityScene\BGSceneObjectReferenceI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph.meta" />
+    <None Include="BgDatabase\Database\Graph\Flow.meta" />
+    <None Include="BgDatabase\Database\Graph\Flow\BGCalcFlow.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Flow\BGCalcFlowContext.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Flow\BGCalcFlowEvents.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Flow\BGCalcFlowI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Flow\BGCalcVarsProvider.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Graph.meta" />
+    <None Include="BgDatabase\Database\Graph\Graph\BGCalcGraph.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Graph\BGCalcGraphTypeEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\BGCalcControl.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\BGCalcControlInput.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\BGCalcControlOutput.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\BGCalcPort.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\BGCalcPortTypeEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\BGCalcValueInput.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\BGCalcValueOutput.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\Interfaces.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcControlInputI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcControlOutputI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcPortI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcValueInputI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Ports\Interfaces\BGCalcValueOutputI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\Binary.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\Binary\BGCalcLoader.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\Binary\BGCalcSaver.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\Common.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\Common\BGCalcLoadContext.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\Common\BGCalcSaveContext.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String\BGCalcGraphModel.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String\BGCalcLoaderString.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String\BGCalcSaverString.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String\BGCalcUnitModel.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String\BGCalcUnitPortModel.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String\BGCalcVarLiteModel.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Serialization\String\BGCalcVarModel.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCode.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeBGId.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeBool.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeByte.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeCalcAction.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeCell.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeComponent.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeControl.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeEntityRuntime.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeField.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeFloat.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeGameObject.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeInt.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeList.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeObject.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeRegistry.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeSByte.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeShort.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeSource.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeStateful.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeString.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeUShort.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeVector2.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeVector3.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\TypeCode\BGCalcTypeCodeVector4.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Abstract.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcCell.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnit2ControlsA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitInitializable.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitLiteral.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitWithInPortsCount.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Abstract\BGCalcUnitWithSource.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\BGCalcDefinitionContext.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\BGCalcUnit.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\BGCalcUnitI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\BGCalcUnitLocationAttribute.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\BGCalcUnitRegistry.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitAnd.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitAndGroup.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitBoolParse.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOr.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOrExclusive.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOrGroup.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Bool\BGCalcUnitOrNegate.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Enum.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Enum\BGCalcUnitEnumLiteral.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Enum\BGCalcUnitEnumToInt.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatAB.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatAbs.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatAdd.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatApproximately.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatCeil.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatCeilToInt.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatDivide.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatFloor.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatFloorToInt.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatMax.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatMin.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatModulo.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatMultiply.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatParse.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatPow.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatRoundToInt.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatSqrt.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\BGCalcUnitFloatSubtract.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatGreater.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatGreaterOrEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatLess.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Comparison\BGCalcUnitFloatLessOrEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstant.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantEpsilon.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantInfinity.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantInfinityNegative.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantNan.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Constants\BGCalcUnitFloatConstantPi.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAcos.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAsin.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAtan.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatAtan2.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatCos.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatDeg2Rad.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatRad2Deg.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatSin.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Float\Trigonometry\BGCalcUnitFloatTan.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntAB.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntAbs.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntAdd.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntDivide.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntMax.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntMin.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntModulo.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntMultiply.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntParse.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\BGCalcUnitIntSubtract.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntGreater.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntGreaterOrEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntLess.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Int\Comparison\BGCalcUnitIntLessOrEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListAdd.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListAddRange.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListClear.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListContains.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListCount.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListCreate.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListGet.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListIndexOf.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListInsert.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListRemove.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListRemoveAt.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\List\BGCalcUnitListSet.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitCast.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitChangeType.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitIsNull.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitNotEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitNull.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\Object\BGCalcUnitObjectToString.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringAdd.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringIndexOf.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringIsNullOrEmpty.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringJoin.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringJoin2.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringLength.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringSplit.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringSubString.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringSubString2.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringToLower.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringToUpper.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\ByType\String\BGCalcUnitStringTrim.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbCount.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbGet.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbMetaBasedA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbRowBasedA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitDbSet.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\BGCalcUnitSourceEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellGetValue.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellGetValue2.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellSetValue.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitCellSetValue2.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitConstructCell.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Cell\BGCalcUnitDeconstructCell.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitCreateEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitDeleteEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitGetEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Entity\BGCalcUnitGetEntityMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Field.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Field\BGCalcUnitGetField.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Field\BGCalcUnitGetFieldMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitCountEntities.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitGetMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitGetMetaEntities.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Meta\BGCalcUnitGetMetaFields.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Relation.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Relation\BGCalcUnitGetByMultipleRelation.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Relation\BGCalcUnitGetByRelationInbound.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Database\Generic\Relation\BGCalcUnitGetBySingleRelation.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Flow.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitBreak.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitFor.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitForEach.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitIf.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Flow\BGCalcUnitWhile.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Graph.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Graph\BGCalcUnitGraphStart.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Localization.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitGetCurrentLocale.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitGetLocalizedValue.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitLocalizationDelegateProvider.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitLocalizationI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Localization\BGCalcUnitSetCurrentLocale.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Reflection.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionGetFieldOrProperty.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionGetStaticFieldOrProperty.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionSetFieldOrProperty.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Reflection\BGCalcUnitReflectionSetStaticFieldOrProperty.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Special.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitCallCalculated.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitDebug.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitGetCurrentEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitGetCurrentGameObject.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitSetResult.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Special\BGCalcUnitVoid.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Unity.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Unity\BGCalcUnitGetComponent.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Unity\BGCalcUnitGetComponents.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Unity\BGCalcUnitGetGameObject.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Variables.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Variables\BGCalcUnitGetVar.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Variables\BGCalcUnitSetVar.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Units\Variables\BGCalcUnitVarA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVar.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarContainer.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarContainerBaseA.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarLite.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarLiteContainer.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarsLiteOwnerI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarsOwnerBaseI.cs.meta" />
+    <None Include="BgDatabase\Database\Graph\Variables\BGCalcVarsOwnerI.cs.meta" />
+    <None Include="BgDatabase\Database\Index.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndex.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperator.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorBetween.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorGreater.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorGreaterOrEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorLess.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorLessOrEqual.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorRange.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexOperatorTypeEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexStorage.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexStorageItem.cs.meta" />
+    <None Include="BgDatabase\Database\Index\BGIndexTypeEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Key.meta" />
+    <None Include="BgDatabase\Database\Key\BGKey.cs.meta" />
+    <None Include="BgDatabase\Database\Key\BGKeyStorage.cs.meta" />
+    <None Include="BgDatabase\Database\Key\BGKeyStorageKey1.cs.meta" />
+    <None Include="BgDatabase\Database\Key\BGKeyStorageKey2.cs.meta" />
+    <None Include="BgDatabase\Database\Key\BGKeyStorageKey3.cs.meta" />
+    <None Include="BgDatabase\Database\Key\BGKeyStorageKey4.cs.meta" />
+    <None Include="BgDatabase\Database\Key\BGKeyStorageKeyI.cs.meta" />
+    <None Include="BgDatabase\Database\Key\BGKeyStorageKeyN.cs.meta" />
+    <None Include="BgDatabase\Database\Meta.meta" />
+    <None Include="BgDatabase\Database\Meta\Nested.meta" />
+    <None Include="BgDatabase\Database\Meta\Nested\BGMetaNested.cs.meta" />
+    <None Include="BgDatabase\Database\Meta\Row.meta" />
+    <None Include="BgDatabase\Database\Meta\Row\BGMetaRow.cs.meta" />
+    <None Include="BgDatabase\Database\Meta\Row\BGMetaRowDuplication.cs.meta" />
+    <None Include="BgDatabase\Database\Repo.meta" />
+    <None Include="BgDatabase\Database\Repo\Addons.meta" />
+    <None Include="BgDatabase\Database\Repo\Addons\BGAddon.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Addons\BGRepoAddons.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\BGRepo.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\BGRepoBinary.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\Lib.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\Lib\BGBinaryReader.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\Lib\BGBinaryWriter.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\Lib\BGMultiThreadedLoader.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V1.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V1\BGRepoBinaryV1.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V2.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V2\BGRepoBinaryV2.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V3.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V3\BGRepoBinaryV3.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V4.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V4\BGRepoBinaryV4.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V5.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V5\BGRepoBinaryV5.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V6.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V6\BGRepoBinaryV6.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V7.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V7\BGRepoBinaryV7.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V8.meta" />
+    <None Include="BgDatabase\Database\Repo\Binary\V8\BGRepoBinaryV8.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsA.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyChange.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyEntityBeforeAdded.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsAnyEntityUpdated.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsBatch.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsEntitiesOrder.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsEntityUpdated.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsField.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventArgsMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventsDelegatesHolder.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventsHolder.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGEventsPool.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Events\BGRepoEvents.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Loader.meta" />
+    <None Include="BgDatabase\Database\Repo\Loader\BGBSAStuff.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Loader\BGConfigForRepo.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepo.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepoCustom.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Loader\BGLoaderForRepoFile.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Loader\BGRepoCustomLoaderModel.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge\BGMergeModeEnum.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge\BGMergerA.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge\BGMergerEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge\BGMergerMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge\BGMergeSettingsA.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge\BGMergeSettingsEntity.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Merge\BGMergeSettingsMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Misc.meta" />
+    <None Include="BgDatabase\Database\Repo\Misc\BGRepoLoadingContext.cs.meta" />
+    <None Include="BgDatabase\Database\Repo\Misc\BGRowRef.cs.meta" />
+    <None Include="BgDatabase\Database\Store.meta" />
+    <None Include="BgDatabase\Database\Store\BGArrayStore.cs.meta" />
+    <None Include="BgDatabase\Database\Store\BGStoreField.cs.meta" />
+    <None Include="BgDatabase\Database\Store\BGStoreFieldAdapter.cs.meta" />
+    <None Include="BgDatabase\Database\Store\BGStoreFieldI.cs.meta" />
+    <None Include="BgDatabase\Database\Store\BGStoreMeta.cs.meta" />
+    <None Include="BgDatabase\Database\Validation.meta" />
+    <None Include="BgDatabase\Database\Validation\BGFieldValidator.cs.meta" />
+    <None Include="BgDatabase\Database\Validation\BGFieldValidatorName.cs.meta" />
+    <None Include="BgDatabase\Database\Validation\BGFieldValidatorNested.cs.meta" />
+    <None Include="BgDatabase\Database\Validation\BGKeyValidator.cs.meta" />
+    <None Include="BgDatabase\Database\Validation\BGMetaEntityValidator.cs.meta" />
+    <None Include="BgDatabase\Database\Validation\BGMetaEntityValidatorNested.cs.meta" />
+    <None Include="BgDatabase\Database\Validation\BGValidationLog.cs.meta" />
+    <None Include="BgDatabase\Database\Validation\BGValidator.cs.meta" />
+    <None Include="BgDatabase\Database\View.meta" />
+    <None Include="BgDatabase\Database\View\BGMetaView.cs.meta" />
+    <None Include="BgDatabase\Database\View\BGMetaViewMappings.cs.meta" />
+    <None Include="BgDatabase\Localization\Addon\BGAddonLocalization.cs.meta" />
+    <None Include="BgDatabase\Localization\Addon\BGLocalizationCurrentLocale.cs.meta" />
+    <None Include="BgDatabase\Localization\Addon\BGLocalizationDna.cs.meta" />
+    <None Include="BgDatabase\Localization\Addon\BGLocalizationLoadingContext.cs.meta" />
+    <None Include="BgDatabase\Localization\Addon\BGLocalizationReposCache.cs.meta" />
+    <None Include="BgDatabase\Localization\Addon\BGLocalizationSaveManager.cs.meta" />
+    <None Include="BgDatabase\Localization\Addon\BGLocalizationStructure.cs.meta" />
+    <None Include="BgDatabase\Localization\DataBinding\BGDBLocaleFieldBinder.cs.meta" />
+    <None Include="BgDatabase\Localization\DataBinding\BGDBLocaleFieldValueProvider.cs.meta" />
+    <None Include="BgDatabase\Localization\Dna\BGDnaFieldLocalizationString.cs.meta" />
+    <None Include="BgDatabase\Localization\Dna\BGDnaFieldLocalizationText.cs.meta" />
+    <None Include="BgDatabase\Localization\Dna\BGDnaFieldLocalizedA.cs.meta" />
+    <None Include="BgDatabase\Localization\Dna\BGDnaMetaLocalization.cs.meta" />
+    <None Include="BgDatabase\Localization\Dna\BGDnaMetaLocalizationSettings.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Common.meta" />
+    <None Include="BgDatabase\Localization\Field\Common\BGFieldLocalizationI.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Common\BGFieldLocalizationTypeCodeFactory.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleA.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleAssetA.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleAudioClip.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleI.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleMaterial.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleObject.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocalePrefab.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleSprite.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleString.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleStringA.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleText.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGFieldLocaleTexture.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Locale\BGLocaleFieldAttribute.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedA.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedAssetA.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedAudioClip.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedI.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedMaterial.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedObject.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedPrefab.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedSprite.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedString.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedText.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGFieldLocalizedTexture.cs.meta" />
+    <None Include="BgDatabase\Localization\Field\Localized\BGLocalizedFieldAttribute.cs.meta" />
+    <None Include="BgDatabase\Localization\Graph\BGCalcUnitLocalizationDelegate.cs.meta" />
+    <None Include="BgDatabase\Localization\Meta\BGMetaLocalization.cs.meta" />
+    <None Include="BgDatabase\Localization\Meta\BGMetaLocalizationA.cs.meta" />
+    <None Include="BgDatabase\Localization\Meta\BGMetaLocalizationSettings.cs.meta" />
+    <None Include="BgDatabase\Localization\Meta\BGMetaLocalizationSingleValue.cs.meta" />
+    <None Include="BgDatabase\Localization\Meta\BGMetaLocalizationTypeCodeFactory.cs.meta" />
+    <None Include="BgDatabase\Localization\Partition\BGLocalizationPartitionLoadHandler.cs.meta" />
+    <None Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocale.cs.meta" />
+    <None Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalization.cs.meta" />
+    <None Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalizationMainProvider.cs.meta" />
+    <None Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalizationProvider.cs.meta" />
+    <None Include="BgDatabase\Localization\Partition\BGMetaPartitionModelLocalized.cs.meta" />
+    <None Include="BgDatabase\Localization\Scene\BGLocalizationGoA.cs.meta" />
+    <None Include="BgDatabase\Misc\Collection.meta" />
+    <None Include="BgDatabase\Misc\Collection\BGHashtableForSerialization.cs.meta" />
+    <None Include="BgDatabase\Misc\Collection\BGHashtableIdKey.cs.meta" />
+    <None Include="BgDatabase\Misc\Collection\BGIdDictionary.cs.meta" />
+    <None Include="BgDatabase\Misc\Collection\BGIdList.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna.meta" />
+    <None Include="BgDatabase\Misc\Dna\BGDna.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\BGDnaDescriptor.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\BGDnaField.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\BGDnaMeta.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\BGDnaCreatable.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\BGDnaCreatableField.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\BGDnaCreatableMeta.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\Field.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\Field\BGDnaFieldNested.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\Field\BGDnaFieldRelationMultiple.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\Field\BGDnaFieldRelationSingle.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\Meta.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\Meta\BGDnaMetaNested.cs.meta" />
+    <None Include="BgDatabase\Misc\Dna\Creatable\Meta\BGDnaMetaRow.cs.meta" />
+    <None Include="BgDatabase\Misc\Misc.meta" />
+    <None Include="BgDatabase\Misc\Misc\BGInterfaceFinder.cs.meta" />
+    <None Include="BgDatabase\Misc\Misc\BGLocalizationUglyHacks.cs.meta" />
+    <None Include="BgDatabase\Misc\Misc\BGLogger.cs.meta" />
+    <None Include="BgDatabase\Misc\Misc\BGPrivate.cs.meta" />
+    <None Include="BgDatabase\Misc\Misc\BGRepoConstants.cs.meta" />
+    <None Include="BgDatabase\Misc\Misc\BGRichText.cs.meta" />
+    <None Include="BgDatabase\Misc\Pool.meta" />
+    <None Include="BgDatabase\Misc\Pool\BGListPoolDefault.cs.meta" />
+    <None Include="BgDatabase\Misc\Pool\BGObjectPool.cs.meta" />
+    <None Include="BgDatabase\Misc\Pool\BGObjectPoolDefault.cs.meta" />
+    <None Include="BgDatabase\Misc\Pool\BGObjectPoolNTS.cs.meta" />
+    <None Include="BgDatabase\Misc\Pool\BGSharedListValue.cs.meta" />
+    <None Include="BgDatabase\Misc\Pool\BGSharedObjectValue.cs.meta" />
+    <None Include="BgDatabase\Misc\Util.meta" />
+    <None Include="BgDatabase\Misc\Util\BGCodeGenUtils.cs.meta" />
+    <None Include="BgDatabase\Misc\Util\BGUtil.cs.meta" />
+    <None Include="BgDatabase\Misc\Util\BGUtilForTest.cs.meta" />
+    <None Include="BgDatabase\Scene\BGDatabasePreloaderGo.cs.meta" />
+    <None Include="BgDatabase\Scene\BGEntityGo.cs.meta" />
+    <None Include="BgDatabase\Scene\BGMainThreadRunner.cs.meta" />
+    <None Include="BgDatabase\Scene\BGWithId.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation\BGDBA.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation\BGDBAutoMapRegistry.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation\BGDBField.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation\BGDBGraph.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation\BGDBTemplate.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation\BGFBFuntion.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Implementation\BGFBFuntionToString.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderBatchGo.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderComponentsGo.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderDatabaseGo.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderFieldGo.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderGoA.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderGraphGo.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderRowGo.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderSingleGoA.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\MonoBehaviour\BGDataBinderTemplateGo.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinder.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderContext.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderField.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderRoot.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextBinderStatic.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextProcessor.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextProcessorContext.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextTagProcessor.cs.meta" />
+    <None Include="BgDatabase\Scene\DataBinding\Template\BGDBTextTagProcessorField.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGDatabaseMonitorGo.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGMonitorPage.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGMonitorPageHome.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGMonitorPageLiveUpdateStatus.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRTDialog.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRTDropDownList.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRTPopup.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRTScrollView.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRTStyle.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRTUsing.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRTUtilities.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRuntimeWindow.cs.meta" />
+    <None Include="BgDatabase\Scene\Monitor\BGRuntimeWindowResizer.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGAttributeReferenceListAllowDuplicates.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGCellReference.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGEntityListReference.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGEntityReference.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGFieldReference.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGIndexReference.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGKeyReference.cs.meta" />
+    <None Include="BgDatabase\Scene\Reference\BGMetaReference.cs.meta" />
+    <None Include="BgDatabase\Sync\Common.meta" />
+    <None Include="BgDatabase\Sync\Common\BGDataSource.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGDsFileBased.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGRowsOrder.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGSyncA.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGSyncDataStructure.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGSyncDisabledConfig.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGSyncDuplicateEntitiesMonitor.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGSyncIdConfig.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGSyncNameMapConfig.cs.meta" />
+    <None Include="BgDatabase\Sync\Common\BGSyncUtil.cs.meta" />
+    <None Include="BgDatabase\Sync\Excel.meta" />
+    <None Include="BgDatabase\Sync\Excel\BGDsExcel.cs.meta" />
+    <None Include="BgDatabase\Sync\Excel\BGExcelServiceI.cs.meta" />
+    <None Include="BgDatabase\Sync\GoogleSheets.meta" />
+    <None Include="BgDatabase\Sync\GoogleSheets\BGDsGoogleSheets.cs.meta" />
+    <None Include="BgDatabase\Sync\GoogleSheets\BGGoogleSheetServiceI.cs.meta" />
+    <None Include="BgDatabase\Sync\Info.meta" />
+    <None Include="BgDatabase\Sync\Info\BGAddonSheetInfo.cs.meta" />
+    <None Include="BgDatabase\Sync\Info\BGBookInfo.cs.meta" />
+    <None Include="BgDatabase\Sync\Info\BGEntitySheetDataInfo.cs.meta" />
+    <None Include="BgDatabase\Sync\Info\BGEntitySheetInfo.cs.meta" />
+    <None Include="BgDatabase\Sync\Info\BGFieldSheetInfo.cs.meta" />
+    <None Include="BgDatabase\Sync\Info\BGMetaSheetInfo.cs.meta" />
+    <None Include="BgDatabase\Sync\Info\BGSheetInfoA.cs.meta" />
+    <None Include="BgDatabase\Sync\Json.meta" />
+    <None Include="BgDatabase\Sync\Json\BGDsJson.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\BGJson.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\BGJsonFormatEnum.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\Classic.meta" />
+    <None Include="BgDatabase\Sync\Json\Classic\BGJsonReader.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\Classic\BGJsonRepoModel.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\Classic\BGJsonWriter.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\Compact.meta" />
+    <None Include="BgDatabase\Sync\Json\Compact\BGJsonCompactFieldBased.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\Compact\BGJsonCompactReader.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\Compact\BGJsonCompactRowBased.cs.meta" />
+    <None Include="BgDatabase\Sync\Json\Compact\BGJsonCompactWriter.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolver.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdMT.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdMTMV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdMTSV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdST.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdSTMV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverByIdSTSV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldMT.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldMTMV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldMTSV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldST.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldSTMV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationResolverFieldSTSV.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationsConfig.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRelationsResolver.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRowResolver.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRowResolverField.cs.meta" />
+    <None Include="BgDatabase\Sync\Relations\BGSyncRowResolverId.cs.meta" />
+    <None Include="BgDatabase\ThirdParty\LiteCsvParser.meta" />
+    <None Include="BgDatabase\ThirdParty\LiteCsvParser\LiteCsvParser.cs.meta" />
+    <None Include="BgDatabase\ThirdParty\LiteCsvParser\LiteCsvParser_license.txt.meta" />
+    <None Include="BgDatabase\ThirdParty\SimpleJson.meta" />
+    <None Include="BgDatabase\ThirdParty\SimpleJson\SimpleJSON.cs.meta" />
+    <None Include="BgDatabase\ThirdParty\SimpleJson\SimpleJSON_license.txt.meta" />
+    <None Include="Controls\ControlXtraReportPanel.cs">
+      <SubType>UserControl</SubType>
+    </None>
+    <None Include="Controls\ControlXtraReportPanel.Designer.cs" />
+    <None Include="Controls\ControlXtraReportViewer.cs">
+      <SubType>UserControl</SubType>
+    </None>
+    <None Include="Controls\ControlXtraReportViewer.Designer.cs" />
+    <None Include="Controls\FormReportView.cs" />
+    <None Include="Controls\FormReportView.Designer.cs" />
+    <None Include="Controls\ReportModuleInfo.cs" />
+    <None Include="Controls\RichTextColor.cs" />
+    <None Include="Controls\RichTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </None>
+    <None Include="Controls\RichTextEditor.Designer.cs" />
+    <None Include="Controls\RichTextFind.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="Controls\RichTextFind.Designer.cs" />
+    <None Include="Controls\RichTextReplace.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="Controls\RichTextReplace.Designer.cs" />
+    <None Include="Controls\XtraDesignForm.cs" />
+    <None Include="Controls\XtraDesignForm.Designer.cs" />
+    <Compile Include="EditorApplication\EditorApplication.cs" />
+    <Compile Include="EditorApplication\IFormBase.cs" />
+    <Compile Include="EditorApplication\Module.cs" />
+    <Compile Include="Exceptions\ExceptionBase.cs" />
+    <Compile Include="Exceptions\ExceptionBeklenmeyen.cs" />
+    <Compile Include="Exceptions\ExceptionIsKurali.cs" />
+    <Compile Include="Exceptions\ExceptionManager.cs" />
+    <Compile Include="Exceptions\ExceptionParametre.cs" />
+    <Compile Include="Exceptions\ExceptionType.cs" />
+    <Compile Include="Exceptions\ExceptionVersiyon.cs" />
+    <Compile Include="Exceptions\ExceptionViewFactory.cs" />
+    <Compile Include="Exceptions\FormExceptionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exceptions\FormExceptionView.Designer.cs" />
+    <Compile Include="Exceptions\FormWarningView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exceptions\FormWarningView.Designer.cs" />
+    <Compile Include="Exceptions\IExceptionView.cs" />
+    <Compile Include="Exceptions\ScreenshotAlici.cs" />
+    <Compile Include="Exceptions\UnhandledExceptionManager.cs" />
+    <Compile Include="Exceptions\VeritabaniException.cs" />
+    <Compile Include="Extension\ArrayExtension.cs" />
+    <Compile Include="Extension\BitmapExtension.cs" />
+    <Compile Include="Extension\CheckedListBoxControlExtension.cs" />
+    <Compile Include="Extension\CommonExtension.cs" />
+    <Compile Include="Extension\CompareValidatinRule.cs" />
+    <None Include="Extension\DataControlExport.cs" />
+    <Compile Include="Extension\CustomSyntaxHighlightService.cs" />
+    <Compile Include="Extension\DataExtensions.cs" />
+    <Compile Include="Extension\DirectoryExtension.cs" />
+    <None Include="Extension\EFExtension.cs" />
+    <Compile Include="Extension\EntityReferenceExtensions.cs" />
+    <Compile Include="Extension\EnumDegerTipi.cs" />
+    <Compile Include="Extension\EnumImageSize.cs" />
+    <Compile Include="Extension\EnumLoginYonetimi.cs" />
+    <Compile Include="Extension\EnumMaskTypes.cs" />
+    <Compile Include="Extension\EnumRightOptions.cs" />
+    <Compile Include="Extension\EnumShortcut.cs" />
+    <Compile Include="Extension\EnumState.cs" />
+    <Compile Include="Extension\Extension.cs" />
+    <Compile Include="Extension\GridControlExtension.cs" />
+    <Compile Include="Extension\GridViewExtension.cs" />
+    <Compile Include="Extension\IMaterializerMethodOptimizer.cs" />
+    <Compile Include="Extension\IModule.cs" />
+    <Compile Include="Extension\LookUpEnumMaskType.cs" />
+    <Compile Include="Extension\MaskTypeList.cs" />
+    <Compile Include="Extension\MaterializerOptimizedMethodAttribute.cs" />
+    <Compile Include="Extension\Materializer_T_.cs" />
+    <Compile Include="Extension\ModuleInfo.cs" />
+    <Compile Include="Extension\ModuleInfoGroup.cs" />
+    <Compile Include="Extension\ModuleInfoList.cs" />
+    <Compile Include="Extension\NETUtility.cs" />
+    <Compile Include="Extension\NotEmptyValidatinRule.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Extension\ObjectQueryExtensions.cs" />
+    <Compile Include="Extension\ParameterInfo.cs" />
+    <Compile Include="Extension\ParameterInfoGroup.cs" />
+    <Compile Include="Extension\ParameterList.cs" />
+    <Compile Include="Extension\ParameterValue.cs" />
+    <Compile Include="Extension\QBaseEntity.cs" />
+    <Compile Include="Extension\RelatedLookUpEdit.cs" />
+    <Compile Include="Extension\RightInfo.cs" />
+    <Compile Include="Extension\RightInfoGroup.cs" />
+    <Compile Include="Extension\RightInfoList.cs" />
+    <Compile Include="Extension\RightValue.cs" />
+    <Compile Include="Extension\SelfReferencesTracking.cs" />
+    <Compile Include="Extension\StreamExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Extension\SystemInfo.cs" />
+    <Compile Include="Extension\TreeListExtension.cs" />
+    <Compile Include="Extension\UniqueValueValidatinRule.cs" />
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditorLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditorLoading.Designer.cs">
+      <DependentUpon>EditorLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMainRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMainRibbon.Designer.cs">
+      <DependentUpon>FormMainRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Blowfish.cs" />
+    <Compile Include="Framework\Opcode.cs" />
+    <Compile Include="Framework\Packet.cs" />
+    <Compile Include="Framework\PacketReader.cs" />
+    <Compile Include="Framework\PacketWriter.cs" />
+    <Compile Include="Framework\Security.cs" />
+    <Compile Include="Framework\SocketClient.cs" />
+    <Compile Include="Framework\TransferBuffer.cs" />
+    <Compile Include="GameLib\EnumSkill.cs" />
+    <Compile Include="GameLib\ItemConsts.cs" />
+    <Compile Include="GameLib\MobTable.cs" />
+    <Compile Include="LookUp\AffectTipi.cs" />
+    <Compile Include="LookUp\Base\LookUpBaseEntityList.cs" />
+    <Compile Include="LookUp\Base\LookUpEntityBase.cs" />
+    <Compile Include="LookUp\EnumAffect.cs" />
+    <Compile Include="LookUp\EnumSonucTipi.cs" />
+    <Compile Include="LookUp\EnumUtilMessage.cs" />
+    <Compile Include="LookUp\JobTipi.cs" />
+    <Compile Include="LookUp\MacDurumu.cs" />
+    <Compile Include="LookUp\VeritabaniTipi.cs" />
+    <Compile Include="LookUp\KategoriTipi.cs" />
+    <Compile Include="LookUp\ParametreTipi.cs" />
+    <Compile Include="LookUp\UtilMessageParametre.cs" />
+    <Compile Include="Modules\Account\Action\FormAccountPunishment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Account\Action\FormAccountPunishment.Designer.cs">
+      <DependentUpon>FormAccountPunishment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Account\Query\FormAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Account\Query\FormAccount.Designer.cs">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Character\Action\FormCharacterPunishment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Character\Action\FormCharacterPunishment.Designer.cs">
+      <DependentUpon>FormCharacterPunishment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Character\Action\FormCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Character\Action\FormCharacter.Designer.cs">
+      <DependentUpon>FormCharacter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Character\Query\FormCharacterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Character\Query\FormCharacterList.Designer.cs">
+      <DependentUpon>FormCharacterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Server\Query\Controls\ControlCore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Server\Query\Controls\ControlCore.Designer.cs">
+      <DependentUpon>ControlCore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Server\Query\Controls\ControlServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Server\Query\Controls\ControlServer.Designer.cs">
+      <DependentUpon>ControlServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Server\Query\FormServerStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Server\Query\FormServerStatus.Designer.cs">
+      <DependentUpon>FormServerStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\Controls\UserControlCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\Controls\UserControlCondition.Designer.cs">
+      <DependentUpon>UserControlCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\Controls\UserControlParamaterAndValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\Controls\UserControlParamaterAndValue.Designer.cs">
+      <DependentUpon>UserControlParamaterAndValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanimCalistir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanimCalistir.Designer.cs">
+      <DependentUpon>FormSqlTanimCalistir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanim.Designer.cs">
+      <DependentUpon>FormSqlTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanimKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanimKategori.Designer.cs">
+      <DependentUpon>FormSqlTanimKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanimListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SqlQuery\Action\FormSqlTanimListesi.Designer.cs">
+      <DependentUpon>FormSqlTanimListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Royale\CharSkill.cs" />
+    <Compile Include="Royale\QuickSlot.cs" />
+    <Compile Include="Utility\AkdenizTimer.cs" />
+    <Compile Include="Utility\ConnectionStringParser.cs" />
+    <Compile Include="Utility\ControlValidator.cs" />
+    <Compile Include="Utility\CustomLocalizationLoader.cs" />
+    <Compile Include="Utility\DatabaseType.cs" />
+    <Compile Include="Utility\EditorValidator.cs" />
+    <Compile Include="Utility\EnumFormTasarimTipi.cs" />
+    <Compile Include="Utility\EnumLanguageOption.cs" />
+    <Compile Include="Utility\FormTasarimComponent.cs" />
+    <Compile Include="Utility\GridColumnValidator.cs" />
+    <Compile Include="Utility\GridViewValidator.cs" />
+    <Compile Include="Utility\IObjectValidatorOwner.cs" />
+    <Compile Include="Utility\Kosul.cs" />
+    <Compile Include="Utility\ObjectValidator.cs" />
+    <Compile Include="Utility\ObjectValidatorList.cs" />
+    <Compile Include="Utility\ObjectValidatorList_TValidator_.cs" />
+    <None Include="Properties\DataSources\RoyaleSupport.AccountBanHistoryInput.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.ChatBanHistoryInput.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameAccountCharacterDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameAccountDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameAccountLoginDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameAccountPunishmentDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameAccountShopHistoryDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameAccountTransactionDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterAffectDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterExchangeLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterFishLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterItemDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterItemPickLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterItemRefineLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterItemUseLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterLevelLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterOfflineShopBasicInfoDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterOfflineShopDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterOfflineShopItemDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterQuestFlagLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterQuestRewardLogDto.datasource" />
+    <None Include="Properties\DataSources\RoyaleSupport.GameCharacterSkillLogDto.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.LookUp.AffectTipi.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.LookUp.JobTipi.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.LookUp.LookUpJobTipi.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.Royale.CharSkill.datasource" />
+    <None Include="SR_Editor_TemporaryKey.pfx" />
+    <None Include="Utility\UtilActiveDirectory.cs" />
+    <Compile Include="Utility\Shard.cs" />
+    <Compile Include="Utility\UtilAkdeniz.cs" />
+    <Compile Include="Utility\UtilAkdenizImage.cs" />
+    <Compile Include="Utility\UtilBarManager.cs" />
+    <Compile Include="Utility\UtilCommon.cs" />
+    <Compile Include="Utility\UtilCompiler.cs" />
+    <Compile Include="Utility\UtilCompilerInternal.cs" />
+    <Compile Include="Utility\UtilConfig.cs" />
+    <None Include="Utility\UtilConnection.cs" />
+    <None Include="Utility\UtilContext.cs" />
+    <Compile Include="Utility\UtilDateTime.cs" />
+    <Compile Include="Utility\UtilFile.cs" />
+    <None Include="Utility\UtilFormTasarim.cs" />
+    <Compile Include="Utility\UtilGrid.cs" />
+    <Compile Include="Utility\Utilities.cs" />
+    <Compile Include="Utility\UtilLanguage.cs" />
+    <Compile Include="Utility\UtilLayout.cs" />
+    <Compile Include="Utility\UtilLisans.cs" />
+    <Compile Include="Utility\UtilLookUp.cs" />
+    <Compile Include="Utility\UtilMask.cs" />
+    <Compile Include="Utility\UtilMessage.cs" />
+    <Compile Include="Utility\UtilParameters.cs" />
+    <Compile Include="Utility\UtilResource.cs" />
+    <Compile Include="Utility\UtilString.cs" />
+    <Compile Include="Utility\UtilValidation.cs" />
+    <Compile Include="Utility\UtilVersion.cs" />
+    <EmbeddedResource Include="Forms\EditorLoading.resx">
+      <DependentUpon>EditorLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMainRibbon.resx">
+      <DependentUpon>FormMainRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Account\Action\FormAccountPunishment.resx">
+      <DependentUpon>FormAccountPunishment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Account\Query\FormAccount.resx">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Character\Action\FormCharacterPunishment.resx">
+      <DependentUpon>FormCharacterPunishment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Character\Action\FormCharacter.resx">
+      <DependentUpon>FormCharacter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Character\Query\FormCharacterList.resx">
+      <DependentUpon>FormCharacterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Server\Query\Controls\ControlCore.resx">
+      <DependentUpon>ControlCore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Server\Query\Controls\ControlServer.resx">
+      <DependentUpon>ControlServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Server\Query\FormServerStatus.resx">
+      <DependentUpon>FormServerStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SqlQuery\Action\Controls\UserControlCondition.resx">
+      <DependentUpon>UserControlCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SqlQuery\Action\Controls\UserControlParamaterAndValue.resx">
+      <DependentUpon>UserControlParamaterAndValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SqlQuery\Action\FormSqlTanimCalistir.resx">
+      <DependentUpon>FormSqlTanimCalistir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SqlQuery\Action\FormSqlTanim.resx">
+      <DependentUpon>FormSqlTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SqlQuery\Action\FormSqlTanimKategori.resx">
+      <DependentUpon>FormSqlTanimKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SqlQuery\Action\FormSqlTanimListesi.resx">
+      <DependentUpon>FormSqlTanimListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EditorApplication\Server\Query\" />
+    <Folder Include="Silkroad\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BgDatabase\ThirdParty\LiteCsvParser\LiteCsvParser_license.txt" />
+    <Content Include="BgDatabase\ThirdParty\SimpleJson\SimpleJSON_license.txt" />
+    <Content Include="frm_gold.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon10.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon12.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon14.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon15.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon17.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon19.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon20.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon21.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon4.png" />
+    <Content Include="Modules\Server\Query\Controls\Icons\Icon8.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.4.2.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+</Project>

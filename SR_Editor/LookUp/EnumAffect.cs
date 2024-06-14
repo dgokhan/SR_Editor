@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SR_Editor.LookUp
+{
+    public enum EnumAffect
+    {
+        AFFECT_NONE,
+
+        AFFECT_MOV_SPEED = 200,
+        AFFECT_ATT_SPEED,
+        AFFECT_ATT_GRADE,
+        AFFECT_INVISIBILITY,
+        AFFECT_STR,
+        AFFECT_DEX,         // 205
+        AFFECT_CON,
+        AFFECT_INT,
+        AFFECT_FISH_MIND_PILL,
+
+        AFFECT_POISON,
+        AFFECT_STUN,        // 210
+        AFFECT_SLOW,
+        AFFECT_DUNGEON_READY,
+        AFFECT_DUNGEON_UNIQUE,
+
+        AFFECT_BUILDING,
+        AFFECT_REVIVE_INVISIBLE,    // 215
+        AFFECT_FIRE,
+        AFFECT_CAST_SPEED,
+        AFFECT_HP_RECOVER_CONTINUE,
+        AFFECT_SP_RECOVER_CONTINUE,
+
+        AFFECT_POLYMORPH,       // 220
+        AFFECT_MOUNT,
+
+        AFFECT_WAR_FLAG,        // 222
+
+        AFFECT_BLOCK_CHAT,      // 223
+        AFFECT_CHINA_FIREWORK,
+
+        AFFECT_BOW_DISTANCE,    // 225
+        AFFECT_DEF_GRADE,       // 226
+        AFFECT_BLEEDING,        // 227
+
+
+        AFFECT_PROTECT = 600,
+
+        AFFECT_PREMIUM_START = 500,
+        AFFECT_EXP_BONUS = 500,
+        AFFECT_ITEM_BONUS = 501,
+        AFFECT_SAFEBOX = 502,
+        AFFECT_AUTOLOOT = 503,  // PREMIUM_AUTOLOOT,
+        AFFECT_FISH_MIND = 504, // PREMIUM_FISH_MIND,
+        AFFECT_MARRIAGE_FAST = 505,
+        AFFECT_GOLD_BONUS = 506,
+        AFFECT_PREMIUM_END = 509,
+
+        AFFECT_MALL = 510,
+        AFFECT_NO_DEATH_PENALTY = 511,
+        AFFECT_SKILL_BOOK_BONUS = 512,
+        AFFECT_SKILL_NO_BOOK_DELAY = 513,
+
+        AFFECT_HAIR = 514,
+        AFFECT_COLLECT = 515,
+        AFFECT_EXP_BONUS_EURO_FREE = 516,
+        AFFECT_EXP_BONUS_EURO_FREE_UNDER_15 = 517,
+        AFFECT_UNIQUE_ABILITY = 518,
+
+        AFFECT_CUBE_1,
+        AFFECT_CUBE_2,
+        AFFECT_CUBE_3,
+        AFFECT_CUBE_4,
+        AFFECT_CUBE_5,
+        AFFECT_CUBE_6,
+        AFFECT_CUBE_7,
+        AFFECT_CUBE_8,
+        AFFECT_CUBE_9,
+        AFFECT_CUBE_10,
+        AFFECT_CUBE_11,
+        AFFECT_CUBE_12,
+
+        AFFECT_BLEND,
+
+        AFFECT_HORSE_NAME,
+        AFFECT_MOUNT_BONUS,
+
+        AFFECT_AUTO_HP_RECOVERY = 534,
+        AFFECT_AUTO_SP_RECOVERY = 535,
+
+        AFFECT_DRAGON_SOUL_QUALIFIED = 540,
+        AFFECT_DRAGON_SOUL_DECK_0 = 541,
+        AFFECT_DRAGON_SOUL_DECK_1 = 542,
+
+
+        AFFECT_RAMADAN_ABILITY = 300,
+        AFFECT_RAMADAN_RING = 301,
+
+        AFFECT_NOG_ABILITY = 302,
+        AFFECT_HOLLY_STONE_POWER = 303,
+
+        AFFECT_QUEST_START_IDX = 1000
+    };
+}

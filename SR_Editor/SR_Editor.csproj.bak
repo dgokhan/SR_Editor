@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53B1FE48-9D33-4B42-99AA-E91E53178AFC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SR_Editor</RootNamespace>
+    <AssemblyName>SR_Editor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>https://cdn.sro-r.com/SR_Editor/</UpdateUrl>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>076EBB4F1B7EF6352793B444131D305C943FAFE4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SR_Editor_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.2.0.35\lib\net461\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.FluentMap, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.FluentMap.1.8.0\lib\net451\Dapper.FluentMap.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Extensions, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroOrm.Dapper.Repositories, Version=1.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicroOrm.Dapper.Repositories.1.14.1\lib\net461\MicroOrm.Dapper.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EditorApplication\Reference\SqlTanim\Definition.cs" />
+    <Compile Include="EditorApplication\Reference\SqlTanim\SqlTanim.cs" />
+    <Compile Include="EditorApplication\Reference\Tournament\Definition.cs" />
+    <Compile Include="EditorApplication\Reference\Tournament\Tournament.cs" />
+    <Compile Include="EditorIslemSonuc.cs" />
+    <Compile Include="AkdenizTransactionScope.cs" />
+    <Compile Include="Controls\AkdenizLayoutControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <None Include="Controls\ControlXtraReportPanel.cs">
+      <SubType>UserControl</SubType>
+    </None>
+    <None Include="Controls\ControlXtraReportPanel.Designer.cs" />
+    <None Include="Controls\ControlXtraReportViewer.cs">
+      <SubType>UserControl</SubType>
+    </None>
+    <None Include="Controls\ControlXtraReportViewer.Designer.cs" />
+    <None Include="Controls\FormReportView.cs" />
+    <None Include="Controls\FormReportView.Designer.cs" />
+    <None Include="Controls\ReportModuleInfo.cs" />
+    <None Include="Controls\RichTextColor.cs" />
+    <None Include="Controls\RichTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </None>
+    <None Include="Controls\RichTextEditor.Designer.cs" />
+    <None Include="Controls\RichTextFind.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="Controls\RichTextFind.Designer.cs" />
+    <None Include="Controls\RichTextReplace.cs">
+      <SubType>Form</SubType>
+    </None>
+    <None Include="Controls\RichTextReplace.Designer.cs" />
+    <None Include="Controls\XtraDesignForm.cs" />
+    <None Include="Controls\XtraDesignForm.Designer.cs" />
+    <Compile Include="EditorApplication\EditorApplication.cs" />
+    <Compile Include="EditorApplication\IFormBase.cs" />
+    <Compile Include="EditorApplication\Module.cs" />
+    <Compile Include="EditorApplication\Reference\Quest\Quest.cs" />
+    <Compile Include="EditorApplication\Reference\Quest\Definition.cs" />
+    <Compile Include="Exceptions\ExceptionBase.cs" />
+    <Compile Include="Exceptions\ExceptionBeklenmeyen.cs" />
+    <Compile Include="Exceptions\ExceptionIsKurali.cs" />
+    <Compile Include="Exceptions\ExceptionManager.cs" />
+    <Compile Include="Exceptions\ExceptionParametre.cs" />
+    <Compile Include="Exceptions\ExceptionType.cs" />
+    <Compile Include="Exceptions\ExceptionVersiyon.cs" />
+    <Compile Include="Exceptions\ExceptionViewFactory.cs" />
+    <Compile Include="Exceptions\FormExceptionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exceptions\FormExceptionView.Designer.cs" />
+    <Compile Include="Exceptions\FormWarningView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exceptions\FormWarningView.Designer.cs" />
+    <Compile Include="Exceptions\IExceptionView.cs" />
+    <Compile Include="Exceptions\ScreenshotAlici.cs" />
+    <Compile Include="Exceptions\UnhandledExceptionManager.cs" />
+    <Compile Include="Exceptions\VeritabaniException.cs" />
+    <Compile Include="Extension\ArrayExtension.cs" />
+    <Compile Include="Extension\BitmapExtension.cs" />
+    <Compile Include="Extension\CheckedListBoxControlExtension.cs" />
+    <Compile Include="Extension\CommonExtension.cs" />
+    <Compile Include="Extension\CompareValidatinRule.cs" />
+    <None Include="Extension\DataControlExport.cs" />
+    <Compile Include="Extension\CustomSyntaxHighlightService.cs" />
+    <Compile Include="Extension\DataExtensions.cs" />
+    <Compile Include="Extension\DirectoryExtension.cs" />
+    <None Include="Extension\EFExtension.cs" />
+    <Compile Include="Extension\EntityReferenceExtensions.cs" />
+    <Compile Include="Extension\EnumDegerTipi.cs" />
+    <Compile Include="Extension\EnumImageSize.cs" />
+    <Compile Include="Extension\EnumLoginYonetimi.cs" />
+    <Compile Include="Extension\EnumMaskTypes.cs" />
+    <Compile Include="Extension\EnumRightOptions.cs" />
+    <Compile Include="Extension\EnumShortcut.cs" />
+    <Compile Include="Extension\EnumState.cs" />
+    <Compile Include="Extension\Extension.cs" />
+    <Compile Include="Extension\GridControlExtension.cs" />
+    <Compile Include="Extension\GridViewExtension.cs" />
+    <Compile Include="Extension\IMaterializerMethodOptimizer.cs" />
+    <Compile Include="Extension\IModule.cs" />
+    <Compile Include="Extension\LookUpEnumMaskType.cs" />
+    <Compile Include="Extension\MaskTypeList.cs" />
+    <Compile Include="Extension\MaterializerOptimizedMethodAttribute.cs" />
+    <Compile Include="Extension\Materializer_T_.cs" />
+    <Compile Include="Extension\ModuleInfo.cs" />
+    <Compile Include="Extension\ModuleInfoGroup.cs" />
+    <Compile Include="Extension\ModuleInfoList.cs" />
+    <Compile Include="Extension\NETUtility.cs" />
+    <Compile Include="Extension\NotEmptyValidatinRule.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Extension\ObjectQueryExtensions.cs" />
+    <Compile Include="Extension\ParameterInfo.cs" />
+    <Compile Include="Extension\ParameterInfoGroup.cs" />
+    <Compile Include="Extension\ParameterList.cs" />
+    <Compile Include="Extension\ParameterValue.cs" />
+    <Compile Include="Extension\QBaseEntity.cs" />
+    <Compile Include="Extension\RelatedLookUpEdit.cs" />
+    <Compile Include="Extension\RightInfo.cs" />
+    <Compile Include="Extension\RightInfoGroup.cs" />
+    <Compile Include="Extension\RightInfoList.cs" />
+    <Compile Include="Extension\RightValue.cs" />
+    <Compile Include="Extension\SelfReferencesTracking.cs" />
+    <Compile Include="Extension\StreamExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Extension\SystemInfo.cs" />
+    <Compile Include="Extension\TreeListExtension.cs" />
+    <Compile Include="Extension\UniqueValueValidatinRule.cs" />
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Blowfish.cs" />
+    <Compile Include="Framework\Opcode.cs" />
+    <Compile Include="Framework\Packet.cs" />
+    <Compile Include="Framework\PacketReader.cs" />
+    <Compile Include="Framework\PacketWriter.cs" />
+    <Compile Include="Framework\Security.cs" />
+    <Compile Include="Framework\SocketClient.cs" />
+    <Compile Include="Framework\TransferBuffer.cs" />
+    <Compile Include="LookUp\Base\LookUpBaseEntityList.cs" />
+    <Compile Include="LookUp\Base\LookUpEntityBase.cs" />
+    <Compile Include="LookUp\EnumSonucTipi.cs" />
+    <Compile Include="LookUp\EnumUtilMessage.cs" />
+    <Compile Include="LookUp\MacDurumu.cs" />
+    <Compile Include="LookUp\VeritabaniTipi.cs" />
+    <Compile Include="LookUp\KategoriTipi.cs" />
+    <Compile Include="LookUp\ParametreTipi.cs" />
+    <Compile Include="LookUp\UtilMessageParametre.cs" />
+    <Compile Include="Models\FilterShard.cs" />
+    <Compile Include="Models\PvpTournament.cs" />
+    <Compile Include="Models\PvpTournamentMatch.cs" />
+    <Compile Include="Models\PvpTournamentParticipant.cs" />
+    <Compile Include="Models\PvpTournamentRound.cs" />
+    <Compile Include="Models\SqlTanim.cs" />
+    <Compile Include="Models\SqlTanimKategori.cs" />
+    <Compile Include="Models\SqlTanimKosul.cs" />
+    <Compile Include="Models\SqlTanimParametre.cs" />
+    <Compile Include="Modules\Reference\Definition\Controls\ControlQuestRewardItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\Controls\ControlQuestRewardItems.Designer.cs">
+      <DependentUpon>ControlQuestRewardItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\Controls\UserControlCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\Controls\UserControlCondition.Designer.cs">
+      <DependentUpon>UserControlCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\Controls\UserControlParamaterAndValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\Controls\UserControlParamaterAndValue.Designer.cs">
+      <DependentUpon>UserControlParamaterAndValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormQuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormQuest.Designer.cs">
+      <DependentUpon>FormQuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormQuestList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormQuestList.Designer.cs">
+      <DependentUpon>FormQuestList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanimCalistir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanimCalistir.Designer.cs">
+      <DependentUpon>FormSqlTanimCalistir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanim.Designer.cs">
+      <DependentUpon>FormSqlTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanimKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanimKategori.Designer.cs">
+      <DependentUpon>FormSqlTanimKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanimListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormSqlTanimListesi.Designer.cs">
+      <DependentUpon>FormSqlTanimListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormTournament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Reference\Definition\FormTournament.Designer.cs">
+      <DependentUpon>FormTournament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AkdenizTimer.cs" />
+    <Compile Include="Utility\ConnectionStringParser.cs" />
+    <Compile Include="Utility\ControlValidator.cs" />
+    <Compile Include="Utility\DatabaseType.cs" />
+    <Compile Include="Utility\EditorValidator.cs" />
+    <Compile Include="Utility\EnumFormTasarimTipi.cs" />
+    <Compile Include="Utility\EnumLanguageOption.cs" />
+    <Compile Include="Utility\FormTasarimComponent.cs" />
+    <Compile Include="Utility\GridColumnValidator.cs" />
+    <Compile Include="Utility\GridViewValidator.cs" />
+    <Compile Include="Utility\IObjectValidatorOwner.cs" />
+    <Compile Include="Utility\Kosul.cs" />
+    <Compile Include="Utility\ObjectValidator.cs" />
+    <Compile Include="Utility\ObjectValidatorList.cs" />
+    <Compile Include="Utility\ObjectValidatorList_TValidator_.cs" />
+    <None Include="Properties\DataSources\SR_Editor.Models.FilterShardInfo.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.Models.PvpTournamentMatch.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.Models.PvpTournamentParticipant.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.Models.PvpTournamentRound.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.Silkroad.C_RefQuest.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.Silkroad.C_RefQuestReward.datasource" />
+    <None Include="Properties\DataSources\SR_Editor.Silkroad.C_RefQuestRewardItems.datasource" />
+    <None Include="SR_Editor_TemporaryKey.pfx" />
+    <None Include="Utility\UtilActiveDirectory.cs" />
+    <Compile Include="Utility\Shard.cs" />
+    <Compile Include="Utility\UtilAkdeniz.cs" />
+    <Compile Include="Utility\UtilAkdenizImage.cs" />
+    <Compile Include="Utility\UtilBarManager.cs" />
+    <Compile Include="Utility\UtilCommon.cs" />
+    <Compile Include="Utility\UtilCompiler.cs" />
+    <Compile Include="Utility\UtilCompilerInternal.cs" />
+    <Compile Include="Utility\UtilConfig.cs" />
+    <None Include="Utility\UtilConnection.cs" />
+    <None Include="Utility\UtilContext.cs" />
+    <Compile Include="Utility\UtilDateTime.cs" />
+    <Compile Include="Utility\UtilFile.cs" />
+    <None Include="Utility\UtilFormTasarim.cs" />
+    <Compile Include="Utility\UtilGrid.cs" />
+    <Compile Include="Utility\Utilities.cs" />
+    <Compile Include="Utility\UtilLanguage.cs" />
+    <Compile Include="Utility\UtilLayout.cs" />
+    <Compile Include="Utility\UtilLisans.cs" />
+    <Compile Include="Utility\UtilLookUp.cs" />
+    <Compile Include="Utility\UtilMask.cs" />
+    <Compile Include="Utility\UtilMessage.cs" />
+    <Compile Include="Utility\UtilParameters.cs" />
+    <Compile Include="Utility\UtilResource.cs" />
+    <Compile Include="Utility\UtilString.cs" />
+    <Compile Include="Utility\UtilValidation.cs" />
+    <Compile Include="Utility\UtilVersion.cs" />
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\Controls\ControlQuestRewardItems.resx">
+      <DependentUpon>ControlQuestRewardItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\Controls\UserControlCondition.resx">
+      <DependentUpon>UserControlCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\Controls\UserControlParamaterAndValue.resx">
+      <DependentUpon>UserControlParamaterAndValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\FormQuest.resx">
+      <DependentUpon>FormQuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\FormQuestList.resx">
+      <DependentUpon>FormQuestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\FormSqlTanimCalistir.resx">
+      <DependentUpon>FormSqlTanimCalistir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\FormSqlTanim.resx">
+      <DependentUpon>FormSqlTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\FormSqlTanimKategori.resx">
+      <DependentUpon>FormSqlTanimKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\FormSqlTanimListesi.resx">
+      <DependentUpon>FormSqlTanimListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Reference\Definition\FormTournament.resx">
+      <DependentUpon>FormTournament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Silkroad\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

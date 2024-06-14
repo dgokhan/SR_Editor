@@ -1,0 +1,27 @@
+﻿<XtraSerializer version="20.1.17.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" CanvasSizeMode="None" ShowPageBreaks="false" SelectedStencils="TemplateDesigner">
+      <Children>
+        <Item1 Position="80,120" Size="146,34" Padding="1,1,1,1" Anchors="Left, Top" ThemeStyleId="Variant1" StrokeId="Accent1" ConnectionPoints="0.5,0 1,0.5 0.5,1 0,0.5" ItemKind="DiagramContainer" CanCopyWithoutParent="true" MoveWithSubordinates="true" ItemsCanDeleteWithoutParent="false" ItemsCanCopyWithoutParent="false" ItemsCanAttachConnectorBeginPoint="false" ItemsCanSnapToOtherItems="false" ItemsCanSnapToThisItem="false" ItemsCanAttachConnectorEndPoint="false" ItemsCanChangeParent="false" ItemsCanSelect="false" ItemsCanResize="false" ItemsCanRotate="false" ItemsCanEdit="false" ItemsCanMove="false" CanAddItems="false" DragMode="ByAnyPoint">
+          <Children>
+            <Item1 Size="32,32" Anchors="Left, Top" Background="#00FFFFFF" StrokeThickness="0" Stroke="#00FFFFFF" ThemeStyleId="Variant1" ForegroundId="Accent1" StretchMode="UniformToFill" ItemKind="DiagramImage" CanCopyWithoutParent="false" CanSelect="false" CanCopy="false" CanMove="false" CanSnapToOtherItems="false" CanSnapToThisItem="false" CanResize="false" CanRotate="false">
+              <Bindings>
+                <Item1 PropertyName="Image" Expression="ImageData" />
+              </Bindings>
+            </Item1>
+            <Item2 Position="35,3" Size="106,15" Anchors="Left, Top" TextAlignment="Left" FontFamily="Segoe UI" FontWeight="Bold" FontSize="10" Background="#005B9BD5" StrokeThickness="0" Stroke="#00FFFFFF" ThemeStyleId="Variant1" ItemKind="DiagramShape" CanCopyWithoutParent="false" CanSelect="false" CanCopy="false" CanMove="false" CanSnapToOtherItems="false" CanSnapToThisItem="false" CanResize="false" CanRotate="false" CanEdit="false">
+              <Bindings>
+                <Item1 PropertyName="Content" Expression="CoreName" />
+              </Bindings>
+            </Item2>
+            <Item3 Position="35,17" Size="106,15" Anchors="Left, Top" TextAlignment="Left" FontFamily="Segoe UI" Background="#005B9BD5" StrokeThickness="0" Stroke="#00FFFFFF" ThemeStyleId="Variant1" ItemKind="DiagramShape" CanCopyWithoutParent="false" CanSelect="false" CanCopy="false" CanMove="false" CanSnapToOtherItems="false" CanSnapToThisItem="false" CanResize="false" CanRotate="false" CanEdit="false">
+              <Bindings>
+                <Item1 PropertyName="Content" Expression="OnlinePlayer" />
+              </Bindings>
+            </Item3>
+          </Children>
+        </Item1>
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>
