@@ -205,7 +205,10 @@ namespace SR_Editor.Modules.Account.Query
             }
             else if (index == 6)
             {
-                ListeleGirisKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateLoginStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateLoginFinish.DateTime = DateTime.Now;
+
+                ListeleGirisKayitlari(dateLoginStart.DateTime, dateLoginFinish.DateTime);
             }
         }
 
@@ -271,7 +274,7 @@ namespace SR_Editor.Modules.Account.Query
             {
                 var api = new RoyaleSupportClient();
                 var characters = api.FindLoginLogByAccountId(aktifAccount.Id, startDate, finishDate);
-                this.bindingSourceGirisKayitlari.DataSource = characters;
+                this.bindingSourceGirisKayitlari.DataSource = characters.OrderByDescending(x => x.Login_time);
 
             }, () =>
             {

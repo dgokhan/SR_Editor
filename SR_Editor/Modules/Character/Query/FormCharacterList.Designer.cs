@@ -49,14 +49,14 @@ namespace SR_Editor.Modules.Character.Query
             this.colServer_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.editorLayoutControl2 = new SR_Editor.Core.Controls.EditorLayoutControl();
+            this.textEditAccountName = new System.Windows.Forms.TextBox();
             this.simpleButtonSorgula = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEditAccountName = new System.Windows.Forms.TextBox();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.editorLayoutControl1)).BeginInit();
             this.editorLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlKarakterler)).BeginInit();
@@ -70,10 +70,10 @@ namespace SR_Editor.Modules.Character.Query
             this.editorLayoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // editorLayoutControl1
@@ -259,6 +259,14 @@ namespace SR_Editor.Modules.Character.Query
             this.editorLayoutControl2.TabIndex = 0;
             this.editorLayoutControl2.Text = "editorLayoutControl2";
             // 
+            // textEditAccountName
+            // 
+            this.textEditAccountName.Location = new System.Drawing.Point(64, 0);
+            this.textEditAccountName.Name = "textEditAccountName";
+            this.textEditAccountName.Size = new System.Drawing.Size(255, 20);
+            this.textEditAccountName.TabIndex = 6;
+            this.textEditAccountName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEditAccountName_KeyDown);
+            // 
             // simpleButtonSorgula
             // 
             this.simpleButtonSorgula.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonSorgula.ImageOptions.Image")));
@@ -293,6 +301,19 @@ namespace SR_Editor.Modules.Character.Query
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.textEditAccountName;
+            this.layoutControlItem5.CustomizationFormText = "Karakter Adı";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlItem5.Size = new System.Drawing.Size(319, 20);
+            this.layoutControlItem5.Text = "Karakter Adı";
+            this.layoutControlItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem5.TextToControlDistance = 5;
             // 
             // Root
             // 
@@ -333,27 +354,6 @@ namespace SR_Editor.Modules.Character.Query
             this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
-            // textEditAccountName
-            // 
-            this.textEditAccountName.Location = new System.Drawing.Point(64, 0);
-            this.textEditAccountName.Name = "textEditAccountName";
-            this.textEditAccountName.Size = new System.Drawing.Size(255, 20);
-            this.textEditAccountName.TabIndex = 6;
-            this.textEditAccountName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEditAccountName_KeyDown);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.textEditAccountName;
-            this.layoutControlItem5.CustomizationFormText = "Karakter Adı";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItem5.Size = new System.Drawing.Size(319, 20);
-            this.layoutControlItem5.Text = "Karakter Adı";
-            this.layoutControlItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(59, 13);
-            this.layoutControlItem5.TextToControlDistance = 5;
-            // 
             // FormCharacterList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,10 +376,10 @@ namespace SR_Editor.Modules.Character.Query
             this.editorLayoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }

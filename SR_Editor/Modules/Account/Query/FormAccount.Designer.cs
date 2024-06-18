@@ -155,6 +155,12 @@ namespace SR_Editor.Modules.Account.Query
             this.gridControl6 = new DevExpress.XtraGrid.GridControl();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageGirisKayitlari = new DevExpress.XtraTab.XtraTabPage();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.btnGet = new DevExpress.XtraEditors.SimpleButton();
+            this.dateLoginFinish = new DevExpress.XtraEditors.DateEdit();
+            this.dateLoginStart = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControlGirisKayitlari = new DevExpress.XtraGrid.GridControl();
             this.bindingSourceGirisKayitlari = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewGirisKayitlari = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -243,6 +249,12 @@ namespace SR_Editor.Modules.Account.Query
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             this.xtraTabPageGirisKayitlari.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginFinish.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginFinish.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginStart.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlGirisKayitlari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGirisKayitlari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewGirisKayitlari)).BeginInit();
@@ -260,11 +272,11 @@ namespace SR_Editor.Modules.Account.Query
             this.editorLayoutControl1.Controls.Add(this.groupControlAccount);
             this.editorLayoutControl1.Controls.Add(this.xtraTabControl);
             this.editorLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editorLayoutControl1.Location = new System.Drawing.Point(0, 47);
+            this.editorLayoutControl1.Location = new System.Drawing.Point(0, 45);
             this.editorLayoutControl1.Name = "editorLayoutControl1";
             this.editorLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1448, 419, 650, 400);
             this.editorLayoutControl1.Root = this.Root;
-            this.editorLayoutControl1.Size = new System.Drawing.Size(2216, 1019);
+            this.editorLayoutControl1.Size = new System.Drawing.Size(2216, 1003);
             this.editorLayoutControl1.TabIndex = 0;
             this.editorLayoutControl1.Text = "editorLayoutControl1";
             // 
@@ -354,7 +366,7 @@ namespace SR_Editor.Modules.Account.Query
             this.groupControlAccount.Location = new System.Drawing.Point(5, 117);
             this.groupControlAccount.Name = "groupControlAccount";
             this.groupControlAccount.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControlAccount.Size = new System.Drawing.Size(340, 887);
+            this.groupControlAccount.Size = new System.Drawing.Size(340, 871);
             this.groupControlAccount.TabIndex = 4;
             this.groupControlAccount.Text = "Hesap Detayları";
             this.groupControlAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
@@ -377,7 +389,7 @@ namespace SR_Editor.Modules.Account.Query
             this.editorLayoutControl5.Name = "editorLayoutControl5";
             this.editorLayoutControl5.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(2018, 443, 650, 400);
             this.editorLayoutControl5.Root = this.layoutControlGroup4;
-            this.editorLayoutControl5.Size = new System.Drawing.Size(326, 842);
+            this.editorLayoutControl5.Size = new System.Drawing.Size(326, 826);
             this.editorLayoutControl5.TabIndex = 0;
             this.editorLayoutControl5.Text = "editorLayoutControl5";
             // 
@@ -518,7 +530,7 @@ namespace SR_Editor.Modules.Account.Query
             this.layoutControlItem16});
             this.layoutControlGroup4.Name = "Root";
             this.layoutControlGroup4.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup4.Size = new System.Drawing.Size(326, 842);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(326, 826);
             this.layoutControlGroup4.TextVisible = false;
             // 
             // layoutControlItem7
@@ -693,7 +705,7 @@ namespace SR_Editor.Modules.Account.Query
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 244);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItem16.Size = new System.Drawing.Size(326, 598);
+            this.layoutControlItem16.Size = new System.Drawing.Size(326, 582);
             this.layoutControlItem16.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutControlItem16.Text = "Hesap Oluşturma Tarihi";
             this.layoutControlItem16.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
@@ -706,7 +718,7 @@ namespace SR_Editor.Modules.Account.Query
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabControl.SelectedTabPage = this.xtraTabPageKarakterler;
-            this.xtraTabControl.Size = new System.Drawing.Size(1856, 897);
+            this.xtraTabControl.Size = new System.Drawing.Size(1856, 881);
             this.xtraTabControl.TabIndex = 5;
             this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageKarakterler,
@@ -723,7 +735,7 @@ namespace SR_Editor.Modules.Account.Query
             this.xtraTabPageKarakterler.Controls.Add(this.gridControlKarakterler);
             this.xtraTabPageKarakterler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageKarakterler.ImageOptions.Image")));
             this.xtraTabPageKarakterler.Name = "xtraTabPageKarakterler";
-            this.xtraTabPageKarakterler.Size = new System.Drawing.Size(1854, 855);
+            this.xtraTabPageKarakterler.Size = new System.Drawing.Size(1854, 837);
             this.xtraTabPageKarakterler.Text = "Karakterler";
             this.xtraTabPageKarakterler.Enter += new System.EventHandler(this.xtraTabPageKarakterler_Enter);
             // 
@@ -737,7 +749,7 @@ namespace SR_Editor.Modules.Account.Query
             this.gridControlKarakterler.Name = "gridControlKarakterler";
             this.gridControlKarakterler.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditJob});
-            this.gridControlKarakterler.Size = new System.Drawing.Size(1854, 855);
+            this.gridControlKarakterler.Size = new System.Drawing.Size(1854, 837);
             this.gridControlKarakterler.TabIndex = 0;
             this.gridControlKarakterler.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewKarakterler});
@@ -956,38 +968,38 @@ namespace SR_Editor.Modules.Account.Query
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(2216, 47);
+            this.barDockControlTop.Size = new System.Drawing.Size(2216, 45);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1066);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1048);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(2216, 19);
+            this.barDockControlBottom.Size = new System.Drawing.Size(2216, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1019);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1003);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(2216, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(2216, 45);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1019);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1003);
             // 
             // xtraTabPageYasaklamaGecmisi
             // 
             this.xtraTabPageYasaklamaGecmisi.Controls.Add(this.gridControlYasaklamaGecmisi);
             this.xtraTabPageYasaklamaGecmisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageYasaklamaGecmisi.ImageOptions.Image")));
             this.xtraTabPageYasaklamaGecmisi.Name = "xtraTabPageYasaklamaGecmisi";
-            this.xtraTabPageYasaklamaGecmisi.Size = new System.Drawing.Size(1854, 855);
+            this.xtraTabPageYasaklamaGecmisi.Size = new System.Drawing.Size(1854, 837);
             this.xtraTabPageYasaklamaGecmisi.Text = "Yasaklama Geçmişi";
             // 
             // gridControlYasaklamaGecmisi
@@ -998,7 +1010,7 @@ namespace SR_Editor.Modules.Account.Query
             this.gridControlYasaklamaGecmisi.MainView = this.gridViewYasaklamaGecmisi;
             this.gridControlYasaklamaGecmisi.MenuManager = this.barManager1;
             this.gridControlYasaklamaGecmisi.Name = "gridControlYasaklamaGecmisi";
-            this.gridControlYasaklamaGecmisi.Size = new System.Drawing.Size(1854, 855);
+            this.gridControlYasaklamaGecmisi.Size = new System.Drawing.Size(1854, 837);
             this.gridControlYasaklamaGecmisi.TabIndex = 0;
             this.gridControlYasaklamaGecmisi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewYasaklamaGecmisi});
@@ -1141,7 +1153,7 @@ namespace SR_Editor.Modules.Account.Query
             this.xtraTabPageEPYuklemeleri.Controls.Add(this.gridControlYuklemeGecmisi);
             this.xtraTabPageEPYuklemeleri.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageEPYuklemeleri.ImageOptions.Image")));
             this.xtraTabPageEPYuklemeleri.Name = "xtraTabPageEPYuklemeleri";
-            this.xtraTabPageEPYuklemeleri.Size = new System.Drawing.Size(1854, 855);
+            this.xtraTabPageEPYuklemeleri.Size = new System.Drawing.Size(1854, 837);
             this.xtraTabPageEPYuklemeleri.Text = "E.P. Yüklemeleri";
             // 
             // gridControlYuklemeGecmisi
@@ -1152,7 +1164,7 @@ namespace SR_Editor.Modules.Account.Query
             this.gridControlYuklemeGecmisi.MainView = this.gridViewYuklemeGecmisi;
             this.gridControlYuklemeGecmisi.MenuManager = this.barManager1;
             this.gridControlYuklemeGecmisi.Name = "gridControlYuklemeGecmisi";
-            this.gridControlYuklemeGecmisi.Size = new System.Drawing.Size(1854, 855);
+            this.gridControlYuklemeGecmisi.Size = new System.Drawing.Size(1854, 837);
             this.gridControlYuklemeGecmisi.TabIndex = 0;
             this.gridControlYuklemeGecmisi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewYuklemeGecmisi});
@@ -1304,7 +1316,7 @@ namespace SR_Editor.Modules.Account.Query
             this.xtraTabPageMarketHarcamalari.Controls.Add(this.gridControlMarketHarcamalari);
             this.xtraTabPageMarketHarcamalari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageMarketHarcamalari.ImageOptions.Image")));
             this.xtraTabPageMarketHarcamalari.Name = "xtraTabPageMarketHarcamalari";
-            this.xtraTabPageMarketHarcamalari.Size = new System.Drawing.Size(1854, 855);
+            this.xtraTabPageMarketHarcamalari.Size = new System.Drawing.Size(1854, 837);
             this.xtraTabPageMarketHarcamalari.Text = "Market Harcamaları";
             // 
             // gridControlMarketHarcamalari
@@ -1315,7 +1327,7 @@ namespace SR_Editor.Modules.Account.Query
             this.gridControlMarketHarcamalari.MainView = this.gridViewMarketHarcamalari;
             this.gridControlMarketHarcamalari.MenuManager = this.barManager1;
             this.gridControlMarketHarcamalari.Name = "gridControlMarketHarcamalari";
-            this.gridControlMarketHarcamalari.Size = new System.Drawing.Size(1854, 855);
+            this.gridControlMarketHarcamalari.Size = new System.Drawing.Size(1854, 837);
             this.gridControlMarketHarcamalari.TabIndex = 0;
             this.gridControlMarketHarcamalari.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMarketHarcamalari});
@@ -1496,7 +1508,7 @@ namespace SR_Editor.Modules.Account.Query
             this.xtraTabPageReferansHasaplari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageReferansHasaplari.ImageOptions.Image")));
             this.xtraTabPageReferansHasaplari.Name = "xtraTabPageReferansHasaplari";
             this.xtraTabPageReferansHasaplari.PageEnabled = false;
-            this.xtraTabPageReferansHasaplari.Size = new System.Drawing.Size(1854, 855);
+            this.xtraTabPageReferansHasaplari.Size = new System.Drawing.Size(1854, 837);
             this.xtraTabPageReferansHasaplari.Text = "Referans Hesapları";
             // 
             // gridControl5
@@ -1506,7 +1518,7 @@ namespace SR_Editor.Modules.Account.Query
             this.gridControl5.MainView = this.gridView5;
             this.gridControl5.MenuManager = this.barManager1;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(1854, 855);
+            this.gridControl5.Size = new System.Drawing.Size(1854, 837);
             this.gridControl5.TabIndex = 0;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -1523,7 +1535,7 @@ namespace SR_Editor.Modules.Account.Query
             this.xtraTabPageReferansKazanclari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageReferansKazanclari.ImageOptions.Image")));
             this.xtraTabPageReferansKazanclari.Name = "xtraTabPageReferansKazanclari";
             this.xtraTabPageReferansKazanclari.PageEnabled = false;
-            this.xtraTabPageReferansKazanclari.Size = new System.Drawing.Size(1854, 855);
+            this.xtraTabPageReferansKazanclari.Size = new System.Drawing.Size(1854, 837);
             this.xtraTabPageReferansKazanclari.Text = "Referans Kazançları";
             // 
             // gridControl6
@@ -1533,7 +1545,7 @@ namespace SR_Editor.Modules.Account.Query
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.MenuManager = this.barManager1;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(1854, 855);
+            this.gridControl6.Size = new System.Drawing.Size(1854, 837);
             this.gridControl6.TabIndex = 0;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -1546,21 +1558,107 @@ namespace SR_Editor.Modules.Account.Query
             // 
             // xtraTabPageGirisKayitlari
             // 
+            this.xtraTabPageGirisKayitlari.Controls.Add(this.tablePanel1);
             this.xtraTabPageGirisKayitlari.Controls.Add(this.gridControlGirisKayitlari);
             this.xtraTabPageGirisKayitlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageGirisKayitlari.ImageOptions.Image")));
             this.xtraTabPageGirisKayitlari.Name = "xtraTabPageGirisKayitlari";
-            this.xtraTabPageGirisKayitlari.Size = new System.Drawing.Size(1854, 855);
+            this.xtraTabPageGirisKayitlari.Size = new System.Drawing.Size(1854, 837);
             this.xtraTabPageGirisKayitlari.Text = "Giriş Kayıtları";
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 54.08F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 51.17F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 4.75F)});
+            this.tablePanel1.Controls.Add(this.btnGet);
+            this.tablePanel1.Controls.Add(this.dateLoginFinish);
+            this.tablePanel1.Controls.Add(this.dateLoginStart);
+            this.tablePanel1.Controls.Add(this.labelControl2);
+            this.tablePanel1.Controls.Add(this.labelControl1);
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(1854, 62);
+            this.tablePanel1.TabIndex = 3;
+            // 
+            // btnGet
+            // 
+            this.tablePanel1.SetColumn(this.btnGet, 2);
+            this.btnGet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGet.ImageOptions.Image")));
+            this.btnGet.Location = new System.Drawing.Point(1777, 32);
+            this.btnGet.Name = "btnGet";
+            this.btnGet.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.tablePanel1.SetRow(this.btnGet, 1);
+            this.btnGet.Size = new System.Drawing.Size(74, 23);
+            this.btnGet.TabIndex = 4;
+            this.btnGet.Tag = "GirisKayitlari";
+            // 
+            // dateLoginFinish
+            // 
+            this.tablePanel1.SetColumn(this.dateLoginFinish, 1);
+            this.dateLoginFinish.EditValue = null;
+            this.dateLoginFinish.Location = new System.Drawing.Point(914, 34);
+            this.dateLoginFinish.MenuManager = this.barManager1;
+            this.dateLoginFinish.Name = "dateLoginFinish";
+            this.dateLoginFinish.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateLoginFinish.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tablePanel1.SetRow(this.dateLoginFinish, 1);
+            this.dateLoginFinish.Size = new System.Drawing.Size(856, 20);
+            this.dateLoginFinish.TabIndex = 3;
+            // 
+            // dateLoginStart
+            // 
+            this.tablePanel1.SetColumn(this.dateLoginStart, 0);
+            this.dateLoginStart.EditValue = null;
+            this.dateLoginStart.Location = new System.Drawing.Point(3, 34);
+            this.dateLoginStart.MenuManager = this.barManager1;
+            this.dateLoginStart.Name = "dateLoginStart";
+            this.dateLoginStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateLoginStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tablePanel1.SetRow(this.dateLoginStart, 1);
+            this.dateLoginStart.Size = new System.Drawing.Size(905, 20);
+            this.dateLoginStart.TabIndex = 2;
+            // 
+            // labelControl2
+            // 
+            this.tablePanel1.SetColumn(this.labelControl2, 1);
+            this.labelControl2.Location = new System.Drawing.Point(914, 6);
+            this.labelControl2.Name = "labelControl2";
+            this.tablePanel1.SetRow(this.labelControl2, 0);
+            this.labelControl2.Size = new System.Drawing.Size(52, 13);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "Bitiş Tarihi:";
+            // 
+            // labelControl1
+            // 
+            this.tablePanel1.SetColumn(this.labelControl1, 0);
+            this.labelControl1.Location = new System.Drawing.Point(3, 6);
+            this.labelControl1.Name = "labelControl1";
+            this.tablePanel1.SetRow(this.labelControl1, 0);
+            this.labelControl1.Size = new System.Drawing.Size(77, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Başlangıç Tarihi:";
             // 
             // gridControlGirisKayitlari
             // 
+            this.gridControlGirisKayitlari.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlGirisKayitlari.DataSource = this.bindingSourceGirisKayitlari;
-            this.gridControlGirisKayitlari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlGirisKayitlari.Location = new System.Drawing.Point(0, 0);
+            this.gridControlGirisKayitlari.Location = new System.Drawing.Point(0, 68);
             this.gridControlGirisKayitlari.MainView = this.gridViewGirisKayitlari;
             this.gridControlGirisKayitlari.MenuManager = this.barManager1;
             this.gridControlGirisKayitlari.Name = "gridControlGirisKayitlari";
-            this.gridControlGirisKayitlari.Size = new System.Drawing.Size(1854, 855);
+            this.gridControlGirisKayitlari.Size = new System.Drawing.Size(1854, 769);
             this.gridControlGirisKayitlari.TabIndex = 0;
             this.gridControlGirisKayitlari.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewGirisKayitlari});
@@ -1686,7 +1784,7 @@ namespace SR_Editor.Modules.Account.Query
             this.splitterItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.Root.Size = new System.Drawing.Size(2216, 1019);
+            this.Root.Size = new System.Drawing.Size(2216, 1003);
             this.Root.TextVisible = false;
             // 
             // emptySpaceItem2
@@ -1706,7 +1804,7 @@ namespace SR_Editor.Modules.Account.Query
             this.layoutControlItemAccount.MinSize = new System.Drawing.Size(350, 313);
             this.layoutControlItemAccount.Name = "layoutControlItemAccount";
             this.layoutControlItemAccount.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItemAccount.Size = new System.Drawing.Size(350, 897);
+            this.layoutControlItemAccount.Size = new System.Drawing.Size(350, 881);
             this.layoutControlItemAccount.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemAccount.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemAccount.TextSize = new System.Drawing.Size(0, 0);
@@ -1719,7 +1817,7 @@ namespace SR_Editor.Modules.Account.Query
             this.layoutControlItemDetail.Location = new System.Drawing.Point(350, 112);
             this.layoutControlItemDetail.Name = "layoutControlItemDetail";
             this.layoutControlItemDetail.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItemDetail.Size = new System.Drawing.Size(1866, 907);
+            this.layoutControlItemDetail.Size = new System.Drawing.Size(1866, 891);
             this.layoutControlItemDetail.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItemDetail.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemDetail.TextSize = new System.Drawing.Size(0, 0);
@@ -1744,7 +1842,7 @@ namespace SR_Editor.Modules.Account.Query
             // splitterItem1
             // 
             this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(0, 1009);
+            this.splitterItem1.Location = new System.Drawing.Point(0, 993);
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(350, 10);
             // 
@@ -1752,7 +1850,7 @@ namespace SR_Editor.Modules.Account.Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2216, 1085);
+            this.ClientSize = new System.Drawing.Size(2216, 1068);
             this.Controls.Add(this.editorLayoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1830,6 +1928,13 @@ namespace SR_Editor.Modules.Account.Query
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             this.xtraTabPageGirisKayitlari.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginFinish.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginFinish.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginStart.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateLoginStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlGirisKayitlari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGirisKayitlari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewGirisKayitlari)).EndInit();
@@ -1989,5 +2094,11 @@ namespace SR_Editor.Modules.Account.Query
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private System.Windows.Forms.TextBox textEditAccountName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraEditors.SimpleButton btnGet;
+        private DevExpress.XtraEditors.DateEdit dateLoginFinish;
+        private DevExpress.XtraEditors.DateEdit dateLoginStart;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

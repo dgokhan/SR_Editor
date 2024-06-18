@@ -23,6 +23,7 @@ using SR_Editor.EditorApplication;
 using SR_Editor.Forms;
 using SR_Editor.LookUp;
 using SR_Editor.Royale;
+using DevExpress.XtraEditors.Repository;
 
 namespace SR_Editor.Modules.Character.Action
 {
@@ -84,6 +85,7 @@ namespace SR_Editor.Modules.Character.Action
                 { "SUPPORT", new List<int>() { 122, 123, 121, 124, 125, 129, 130, 131 } },
             });
         }
+
 
         public void InitData()
         {
@@ -448,7 +450,10 @@ namespace SR_Editor.Modules.Character.Action
             }
             else if (index == 4) // giris kayitlari
             {
-                ListeleGirisKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateLoginStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateLoginFinish.DateTime = DateTime.Now;
+
+                ListeleGirisKayitlari(dateLoginStart.DateTime, dateLoginFinish.DateTime);
             }
             else if (index == 5) // seviye kayitlari
             {
@@ -456,15 +461,24 @@ namespace SR_Editor.Modules.Character.Action
             }
             else if (index == 6) // balikcilik kayitlari
             {
-                ListeleBalikcilikKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateFishStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateFishFinish.DateTime = DateTime.Now;
+
+                ListeleBalikcilikKayitlari(dateFishStart.DateTime, dateFishFinish.DateTime);
             }
             else if (index == 7) // ticaret kayitlari
             {
-                ListeleTicaretKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateTradeStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateTradeFinish.DateTime = DateTime.Now;
+
+                ListeleTicaretKayitlari(dateTradeStart.DateTime, dateTradeFinish.DateTime);
             }
             else if (index == 8) // gorev odul kayitlari
             {
-                ListeleGorevOdulKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateQuestRewardStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateQuestRewardFinish.DateTime = DateTime.Now;
+
+                ListeleGorevOdulKayitlari(dateQuestRewardStart.DateTime, dateQuestRewardFinish.DateTime);
             }
             else if (index == 9) // quest flagleri
             {
@@ -472,27 +486,52 @@ namespace SR_Editor.Modules.Character.Action
             }
             else if (index == 10) // pazar
             {
+                dateSaleItemStart.DateTime = DateTime.Now.AddMonths(-1);
+                dateSaleItemFinish.DateTime = DateTime.Now;
+
+                ListeleAktifPazarUstBilgileri();
+                KisiselDukkanDepoKayitlari(); 
+                ListeleAktifPazarKayitlari();
+                ListeleAktifPazarLogKayitlari(dateSaleItemStart.DateTime, dateSaleItemFinish.DateTime);
             }
-            else if (index == 11) // esya kullanma sayilari
+            else if (index == 11) // depo kayıtları
             {
-                ListeleEsyaKullanmaKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateStorageStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateStorageFinish.DateTime = DateTime.Now;
+
+                ListeleDepoKayitlari(dateStorageStart.DateTime, dateStorageFinish.DateTime);
+                ListeleAktifDepoKayitlari();
+                ListeleAktifNesneDepoKayitlari();
             }
-            else if (index == 12) // esya toplama kayitlari
+            else if (index == 12) // esya kullanma sayilari
             {
-                ListeleEsyaToplamaKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateItemUsingStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateItemUsingFinish.DateTime = DateTime.Now;
+
+                ListeleEsyaKullanmaKayitlari(dateItemUsingStart.DateTime, dateItemUsingFinish.DateTime);
             }
-            else if (index == 13) // esya atmakayitlari
+            else if (index == 13) // esya toplama kayitlari
+            {
+                dateItemPickStart.DateTime = DateTime.Now.AddMonths(-1);
+                dateItemPickFinish.DateTime = DateTime.Now;
+
+                ListeleEsyaToplamaKayitlari(dateItemPickStart.DateTime, dateItemPickFinish.DateTime);
+            }
+            else if (index == 14) // esya atmakayitlari
             {
             }
-            else if (index == 14) // esya yukseltme kayitlari
+            else if (index == 15) // esya yukseltme kayitlari
             {
-                ListeleEsyaYukseltmeKayitlari(DateTime.Now.AddDays(-1), DateTime.Now);
+                dateItemUpgradeStart.DateTime = DateTime.Now.AddMonths(-3);
+                dateItemUpgradeFinish.DateTime = DateTime.Now;
+
+                ListeleEsyaYukseltmeKayitlari(dateItemUpgradeStart.DateTime, dateItemUpgradeFinish.DateTime);
             }
-            else if (index == 15) // yasaklama kayitlari
+            else if (index == 16) // yasaklama kayitlari
             {
                 ListeleYasaklamaKayitlari();
             }
-            else if (index == 16) // yasaklama kayitlari
+            else if (index == 17) // yasaklama kayitlari
             {
                 ListeleHesapYasaklamaKayitlari();
             }
@@ -522,13 +561,13 @@ namespace SR_Editor.Modules.Character.Action
 
         private void ListeleEsyaYukseltmeKayitlari(DateTime startDate, DateTime finishDate)
         {
-            var api = new RoyaleSupportClient();
+            //var api = new RoyaleSupportClient();
 
-            Loading(() =>
-            {
-                var data = api.FindPunishmentsByAccountId(this.hesapBilgileri.Id).ToList();
-                bindingSourceHesapYasaklamaGecmisi.DataSource = data;
-            });
+            //Loading(() =>
+            //{
+            //    var data = api.GameCharacterItemRefineLog(shardId, this.hesapBilgileri.Id).ToList();
+            //    bindingSourceEsyaYukseltmeKayitlari.DataSource = data;
+            //});
         }
 
         private void ListeleEsyaToplamaKayitlari(DateTime startDate, DateTime finishDate)
@@ -538,7 +577,7 @@ namespace SR_Editor.Modules.Character.Action
             Loading(() =>
             {
                 var data = api.GameCharacterItemPickLog(shardId, charId, startDate, finishDate).ToList();
-                bindingSourceEsyaToplamaKayitlari.DataSource = data;
+                bindingSourceEsyaToplamaKayitlari.DataSource = data.OrderByDescending(x => x.Time);
             });
         }
 
@@ -549,9 +588,42 @@ namespace SR_Editor.Modules.Character.Action
             Loading(() =>
             {
                 var data = api.GameCharacterItemUseLog(shardId, charId, startDate, finishDate).ToList();
-                bindingSourceEsyaKullanmaKayitlari.DataSource = data;
+                bindingSourceEsyaKullanmaKayitlari.DataSource = data.OrderByDescending(x => x.Time);
             });
         }
+
+        private void ListeleDepoKayitlari(DateTime startDate, DateTime finishDate)
+        {
+            var api = new RoyaleSupportClient();
+
+            Loading(() =>
+            {
+                var data = api.GameCharacterStorageLog(shardId, charId, startDate, finishDate).ToList();
+                bindingSourceDepoKayitlari.DataSource = data.OrderByDescending(x => x.Time);
+            });
+        }
+        private void ListeleAktifDepoKayitlari()
+        {
+            var api = new RoyaleSupportClient();
+
+            Loading(() =>
+            {
+                var data = api.GameCharacterActiveStorage(shardId, charId).ToList();
+                bindingSourceAktifDepoKayitlari.DataSource = data.OrderBy(x=>x.Pos);
+            });
+        }
+        
+        private void ListeleAktifNesneDepoKayitlari()
+        {
+            var api = new RoyaleSupportClient();
+
+            Loading(() =>
+            {
+                var data = api.GameCharacterActiveMallStorage(shardId, charId).ToList();
+                bindingSourceNesneDepoKayitlari.DataSource = data.OrderBy(x=>x.Pos);
+            });
+        }
+
         private void ListeleTicaretKayitlari(DateTime startDate, DateTime finishDate)
         {
             var api = new RoyaleSupportClient();
@@ -559,7 +631,7 @@ namespace SR_Editor.Modules.Character.Action
             Loading(() =>
             {
                 var data = api.GameCharacterExchangeLog(shardId, charId, startDate, finishDate).ToList();
-                bindingSourceTicaretKayitlari.DataSource = data;
+                bindingSourceTicaretKayitlari.DataSource = data.OrderByDescending(x => x.Time);
             });
         }
         private void ListeleGorevFlagleri()
@@ -580,7 +652,7 @@ namespace SR_Editor.Modules.Character.Action
             Loading(() =>
             {
                 var data = api.GameCharacterQuestRewardLog(shardId, charId, startDate, finishDate).ToList();
-                bindingSourceGorevOdulKayitlari.DataSource = data;
+                bindingSourceGorevOdulKayitlari.DataSource = data.OrderByDescending(x => x.Time);
             });
         }
 
@@ -591,7 +663,7 @@ namespace SR_Editor.Modules.Character.Action
             Loading(() =>
             {
                 var data = api.FindLoginLogByAccountId(hesapBilgileri.Id, startDate, finishDate).ToList();
-                bindingSourceGirisKayitlari.DataSource = data.Where(p => p.Player_id == charId);
+                bindingSourceGirisKayitlari.DataSource = data.Where(p => p.Player_id == charId).OrderByDescending(x=>x.Login_time);
             });
         }
 
@@ -604,6 +676,77 @@ namespace SR_Editor.Modules.Character.Action
                 var data = api.GameCharacterLevelLog(shardId, charId).ToList();
                 bindingSourceSeviyeKayitlari.DataSource = data;
             });
+        }
+
+        private void ListeleAktifPazarUstBilgileri()
+        {
+            try
+            {
+                var api = new RoyaleSupportClient();
+
+                Loading(() =>
+                {
+                    var data = api.GameCharacterMarket(shardId, charId);
+                    bindingSourceAktifPazarUstBilgileri.DataSource = data;
+                });
+            }
+            catch (Exception)
+            { 
+            }
+        }
+
+        private void ListeleAktifPazarKayitlari()
+        {
+            try
+            {
+                var api = new RoyaleSupportClient();
+
+                Loading(() =>
+                {
+                    var data = api.GameCharacterPartsOnSaleItems(shardId, charId);
+                    bindingSourceAktifPazarKayitlari.DataSource = data;
+                });
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void ListeleAktifPazarLogKayitlari(DateTime startDate, DateTime finishDate)
+        {
+            try
+            {
+                var api = new RoyaleSupportClient();
+
+                Loading(() =>
+                {
+                    var data = api.GameCharacterPartsOnSaleItemLogs(shardId, charId, startDate, finishDate);
+                    bindingSourceAktifPazarLogKayitlari.DataSource = data.OrderByDescending(x => x.Time);
+                });
+            }
+            catch (Exception)
+            {
+                 
+            }
+        }
+
+        private void KisiselDukkanDepoKayitlari()
+        {
+            try
+            {
+                var api = new RoyaleSupportClient();
+
+                Loading(() =>
+                {
+                    var data = api.GameCharacterMarketStorageItems(shardId, charId);
+                    bindingSourceKisiselDukkanDepoKayitlari.DataSource = data;
+                });
+            }
+            catch (Exception)
+            {
+                 
+            }
         }
 
         private void ListeleEtkiler()
@@ -635,7 +778,7 @@ namespace SR_Editor.Modules.Character.Action
             Loading(() =>
             {
                 var data = api.GameCharacterFishLog(shardId, charId, startDate, finishDate);
-                bindingSourceBalikcilikKayitlari.DataSource = data;
+                bindingSourceBalikcilikKayitlari.DataSource = data.OrderByDescending(x => x.Time);
             });
         }
 
@@ -1068,11 +1211,10 @@ namespace SR_Editor.Modules.Character.Action
             else if (e.Column.FieldName == "ItemName" && e.IsGetData)
             {
                 GridView view = sender as GridView;
-                var vnum = view.GetRowCellValue(view.GetRowHandle(e.ListSourceRowIndex), "Vnum").ToString();
-                var itemName = LocaleItem.GetEntityByKeyNameKey(vnum.ToString()).LocalizedValue;
+                var vnum = view.GetRowCellValue(view.GetRowHandle(e.ListSourceRowIndex), "Vnum")?.ToString();
+                var itemName = LocaleItem.GetEntityByKeyNameKey(vnum?.ToString())?.LocalizedValue;
 
                 e.Value = $"{itemName}";
-
             }
         }
 
@@ -1233,6 +1375,25 @@ namespace SR_Editor.Modules.Character.Action
 
                     ListeleEsyaYukseltmeKayitlari(startDate, finishDate);
                 }
+                else if (index.Tag == "DepoKayitlari") // depo kayitlari
+                {
+                    var startDate = dateStorageStart.DateTime;
+                    var finishDate = dateStorageFinish.DateTime.AddDays(1);
+
+                    ListeleDepoKayitlari(startDate, finishDate);
+                    ListeleAktifDepoKayitlari();
+                    ListeleAktifNesneDepoKayitlari();
+                }
+                else if (index.Tag == "PazarKayitlari") // depo kayitlari
+                {
+                    var startDate = dateSaleItemStart.DateTime;
+                    var finishDate = dateSaleItemFinish.DateTime.AddDays(1);
+
+                    ListeleAktifPazarUstBilgileri();
+                    KisiselDukkanDepoKayitlari();
+                    ListeleAktifPazarKayitlari();
+                    ListeleAktifPazarLogKayitlari(startDate, finishDate);
+                }
             }
             catch (Exception ex)
             {
@@ -1250,6 +1411,88 @@ namespace SR_Editor.Modules.Character.Action
                 else
                     MessageBox.Show("The value in the selected cell is null or empty!");
                 e.Handled = true;
+            }
+        }
+
+        private void gridViewDepoKayitlari_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "How")
+            {
+                if (e.Value != null && e.Value.ToString() == "SAFEBOX PUT")
+                {
+                    e.DisplayText = "Depoya Aktarıldı";
+                }
+                else
+                {
+                    e.DisplayText = "Depodan Alındı";
+                }
+            }
+        }
+
+        private void gridViewDepoKayitlari_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            if (e.RowHandle >= 0)
+            {
+                string status = view.GetRowCellValue(e.RowHandle, view.Columns["How"]).ToString();
+
+                if (status == "SAFEBOX PUT")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#FFECAF");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFECAF");
+                }
+            }
+        }
+
+        private void xtraTabControl1_CustomDrawHeaderButton(object sender, DevExpress.XtraTab.HeaderButtonCustomDrawEventArgs e)
+        {
+           
+        }
+
+        private void gridControl41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView4_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            if (e.RowHandle >= 0)
+            {
+                string status = view.GetRowCellValue(e.RowHandle, view.Columns["Process"])?.ToString();
+
+                if (status == "SATICIYA YANG AKTARILDI")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#FFF1B2");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFF1B2");
+                }
+                else if (status == "ÜRÜN BAŞARIYLA SATILDI")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#DCFFCD");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#DCFFCD");
+                }
+                else if (status == "ÜRÜN SATIŞA EKLENDİ")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#CFE9FF");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#CFE9FF");
+                }
+                else if (status == "PAZARDAN ENVANTERE GERİ ALINDI")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#FFD28E");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFD28E");
+                }
+                else if (status == "YANG ENVANTERE AKTARILDI" )
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#FFCADC");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFCADC");
+                }
+                else if (status == "PAZARDAN SATIN ALINDI")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#FFCECE");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFCECE");
+                }
             }
         }
     }
