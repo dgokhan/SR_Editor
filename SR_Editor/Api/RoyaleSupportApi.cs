@@ -11263,23 +11263,26 @@ namespace RoyaleSupport
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GameCharacterActiveMallStorageDto>> GameCharacterActiveMallStorageAsync(int? shardId, int? charId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GameCharacterActiveMallStorageDto>> GameCharacterActiveMallStorageAsync(int shardId, string characterName)
         {
-            return GameCharacterActiveMallStorageAsync(shardId, charId, System.Threading.CancellationToken.None);
+            return GameCharacterActiveMallStorageAsync(shardId, characterName, System.Threading.CancellationToken.None);
         }
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Collections.Generic.ICollection<GameCharacterActiveMallStorageDto> GameCharacterActiveMallStorage(int? shardId, int? charId)
+        public virtual System.Collections.Generic.ICollection<GameCharacterActiveMallStorageDto> GameCharacterActiveMallStorage(int shardId, string characterName)
         {
-            return System.Threading.Tasks.Task.Run(async () => await GameCharacterActiveMallStorageAsync(shardId, charId, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await GameCharacterActiveMallStorageAsync(shardId, characterName, System.Threading.CancellationToken.None)).GetAwaiter().GetResult();
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GameCharacterActiveMallStorageDto>> GameCharacterActiveMallStorageAsync(int? shardId, int? charId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GameCharacterActiveMallStorageDto>> GameCharacterActiveMallStorageAsync(int shardId, string characterName, System.Threading.CancellationToken cancellationToken)
         {
+            if (shardId == null)
+                throw new System.ArgumentNullException("shardId");
+
             var client_ = _httpClient;
             var disposeClient_ = false;
             try
@@ -11291,16 +11294,13 @@ namespace RoyaleSupport
 
                     var urlBuilder_ = new System.Text.StringBuilder();
                     if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
-                    // Operation Path: "api/app/game-character/game-character-active-mall-storage"
-                    urlBuilder_.Append("api/app/game-character/game-character-active-mall-storage");
+                    // Operation Path: "api/app/game-character/game-character-active-mall-storage/{shardId}"
+                    urlBuilder_.Append("api/app/game-character/game-character-active-mall-storage/");
+                    urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(shardId, System.Globalization.CultureInfo.InvariantCulture)));
                     urlBuilder_.Append('?');
-                    if (shardId != null)
+                    if (characterName != null)
                     {
-                        urlBuilder_.Append(System.Uri.EscapeDataString("shardId")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(shardId, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
-                    }
-                    if (charId != null)
-                    {
-                        urlBuilder_.Append(System.Uri.EscapeDataString("charId")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(charId, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
+                        urlBuilder_.Append(System.Uri.EscapeDataString("characterName")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(characterName, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
                     }
                     urlBuilder_.Length--;
 

@@ -3754,7 +3754,7 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn33.OptionsColumn.AllowEdit = false;
             this.gridColumn33.Visible = true;
             this.gridColumn33.VisibleIndex = 1;
-            this.gridColumn33.Width = 112;
+            this.gridColumn33.Width = 160;
             // 
             // gridColumn34
             // 
@@ -3762,9 +3762,6 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn34.FieldName = "What";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.OptionsColumn.AllowEdit = false;
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 5;
-            this.gridColumn34.Width = 74;
             // 
             // gridColumn35
             // 
@@ -3782,7 +3779,7 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn36.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.gridColumn36.Visible = true;
             this.gridColumn36.VisibleIndex = 3;
-            this.gridColumn36.Width = 163;
+            this.gridColumn36.Width = 186;
             // 
             // gridColumn37
             // 
@@ -3794,7 +3791,7 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn37.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.gridColumn37.Visible = true;
             this.gridColumn37.VisibleIndex = 2;
-            this.gridColumn37.Width = 60;
+            this.gridColumn37.Width = 43;
             // 
             // repositoryItemPictureEdit10
             // 
@@ -3808,7 +3805,7 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn38.OptionsColumn.AllowEdit = false;
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 0;
-            this.gridColumn38.Width = 112;
+            this.gridColumn38.Width = 133;
             // 
             // gridColumn39
             // 
@@ -3818,7 +3815,7 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn39.OptionsColumn.AllowEdit = false;
             this.gridColumn39.Visible = true;
             this.gridColumn39.VisibleIndex = 4;
-            this.gridColumn39.Width = 220;
+            this.gridColumn39.Width = 263;
             // 
             // gridColumn40
             // 
@@ -3827,8 +3824,8 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.OptionsColumn.AllowEdit = false;
             this.gridColumn40.Visible = true;
-            this.gridColumn40.VisibleIndex = 6;
-            this.gridColumn40.Width = 82;
+            this.gridColumn40.VisibleIndex = 5;
+            this.gridColumn40.Width = 112;
             // 
             // tablePanel10
             // 

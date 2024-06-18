@@ -619,7 +619,7 @@ namespace SR_Editor.Modules.Character.Action
 
             Loading(() =>
             {
-                var data = api.GameCharacterActiveMallStorage(shardId, charId).ToList();
+                var data = api.GameCharacterActiveMallStorage(shardId, karakterBilgileri.Name).ToList();
                 bindingSourceNesneDepoKayitlari.DataSource = data.OrderBy(x=>x.Pos);
             });
         }
@@ -1442,6 +1442,11 @@ namespace SR_Editor.Modules.Character.Action
                     e.Appearance.BackColor = ColorTranslator.FromHtml("#FFECAF");
                     e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFECAF");
                 }
+                else if (status == "SAFEBOX GET")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#DCFFCD");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#DCFFCD");
+                }
             }
         }
 
@@ -1468,25 +1473,35 @@ namespace SR_Editor.Modules.Character.Action
                     e.Appearance.BackColor = ColorTranslator.FromHtml("#FFF1B2");
                     e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFF1B2");
                 }
-                else if (status == "ÜRÜN BAŞARIYLA SATILDI")
+                else if (status == "ÜRÜN PAZARDAN SATILDI")
                 {
                     e.Appearance.BackColor = ColorTranslator.FromHtml("#DCFFCD");
                     e.Appearance.BackColor2 = ColorTranslator.FromHtml("#DCFFCD");
                 }
-                else if (status == "ÜRÜN SATIŞA EKLENDİ")
+                else if (status == "PAZARDA SATIŞA EKLENDİ")
                 {
                     e.Appearance.BackColor = ColorTranslator.FromHtml("#CFE9FF");
                     e.Appearance.BackColor2 = ColorTranslator.FromHtml("#CFE9FF");
                 }
-                else if (status == "PAZARDAN ENVANTERE GERİ ALINDI")
+                else if (status == "PAZARDAN ÇIKARILDI")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#FFCADC");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFCADC");
+                }
+                else if (status == "KİŞİSEL DÜKKANDAN YANG ÇEKİLDİ")
                 {
                     e.Appearance.BackColor = ColorTranslator.FromHtml("#FFD28E");
                     e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFD28E");
                 }
-                else if (status == "YANG ENVANTERE AKTARILDI" )
+                else if (status == "ÜRÜN FİYATI DEĞİŞTİRİLDİ")
                 {
-                    e.Appearance.BackColor = ColorTranslator.FromHtml("#FFCADC");
-                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#FFCADC");
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#ECFFCA");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#ECFFCA");
+                }
+                else if (status == "KİŞİSEL DÜKKANDAN ITEM ÇEKİLDİ")
+                {
+                    e.Appearance.BackColor = ColorTranslator.FromHtml("#DBCAFF");
+                    e.Appearance.BackColor2 = ColorTranslator.FromHtml("#DBCAFF");
                 }
                 else if (status == "PAZARDAN SATIN ALINDI")
                 {
