@@ -1510,6 +1510,39 @@ namespace SR_Editor.Modules.Character.Action
                 }
             }
         }
+
+        private void gridViewMarketLog_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "Hint")
+            {
+                string cellValue = e.Value?.ToString();
+                if (!string.IsNullOrEmpty(cellValue))
+                {
+                    string[] parts = cellValue.Split(',');
+                    foreach (var item in parts)
+                    {
+                        if (item.Contains("Yang") || item.Contains("Price"))
+                        {
+                            var newPart = item.ToString().Replace("Price: ", "").Replace("Yang: ", "").Replace(" (excluding tax)","").Replace(" (-tax)","");
+                            string[] priceParts = newPart.Split('>');
+                            foreach (var priceItem in priceParts)
+                            {
+                                if (!string.IsNullOrEmpty(priceItem))
+                                {
+                                    var newPriceItem = priceItem.ToString().Replace("-", "");
+                                    if (decimal.TryParse(newPriceItem?.ToString(), out decimal value))
+                                    {
+                                        var newGoldValue = value.ToString("N0");
+                                        cellValue = cellValue.Replace(priceItem, " " + newGoldValue);
+                                        e.DisplayText = cellValue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

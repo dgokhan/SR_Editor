@@ -250,7 +250,7 @@ namespace SR_Editor.Modules.Character.Action
             this.xtraTabPage23 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
             this.bindingSourceAktifPazarLogKayitlari = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewMarketLog = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1077,7 +1077,7 @@ namespace SR_Editor.Modules.Character.Action
             this.xtraTabPage23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAktifPazarLogKayitlari)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMarketLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel10)).BeginInit();
             this.tablePanel10.SuspendLayout();
@@ -3569,6 +3569,8 @@ namespace SR_Editor.Modules.Character.Action
             this.textEdit5.Location = new System.Drawing.Point(153, 63);
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEdit5.Properties.Mask.EditMask = "n0";
+            this.textEdit5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit5.Properties.ReadOnly = true;
             this.textEdit5.Size = new System.Drawing.Size(301, 20);
             this.textEdit5.StyleController = this.layoutControl1;
@@ -3715,7 +3717,7 @@ namespace SR_Editor.Modules.Character.Action
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl4.DataSource = this.bindingSourceAktifPazarLogKayitlari;
             this.gridControl4.Location = new System.Drawing.Point(1, 67);
-            this.gridControl4.MainView = this.gridView4;
+            this.gridControl4.MainView = this.gridViewMarketLog;
             this.gridControl4.MenuManager = this.barManager12;
             this.gridControl4.Name = "gridControl4";
             this.gridControl4.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -3723,15 +3725,15 @@ namespace SR_Editor.Modules.Character.Action
             this.gridControl4.Size = new System.Drawing.Size(922, 720);
             this.gridControl4.TabIndex = 8;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
+            this.gridViewMarketLog});
             // 
             // bindingSourceAktifPazarLogKayitlari
             // 
             this.bindingSourceAktifPazarLogKayitlari.DataSource = typeof(RoyaleSupport.CharacterPartsOnSaleItemLogsDto);
             // 
-            // gridView4
+            // gridViewMarketLog
             // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewMarketLog.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn33,
             this.gridColumn34,
             this.gridColumn35,
@@ -3740,12 +3742,13 @@ namespace SR_Editor.Modules.Character.Action
             this.gridColumn38,
             this.gridColumn39,
             this.gridColumn40});
-            this.gridView4.GridControl = this.gridControl4;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsView.RowAutoHeight = true;
-            this.gridView4.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView4_RowStyle);
-            this.gridView4.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridViewEsyaToplamaKayitlari_CustomUnboundColumnData);
-            this.gridView4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView_KeyDown);
+            this.gridViewMarketLog.GridControl = this.gridControl4;
+            this.gridViewMarketLog.Name = "gridViewMarketLog";
+            this.gridViewMarketLog.OptionsView.RowAutoHeight = true;
+            this.gridViewMarketLog.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView4_RowStyle);
+            this.gridViewMarketLog.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridViewEsyaToplamaKayitlari_CustomUnboundColumnData);
+            this.gridViewMarketLog.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridViewMarketLog_CustomColumnDisplayText);
+            this.gridViewMarketLog.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView_KeyDown);
             // 
             // gridColumn33
             // 
@@ -11099,7 +11102,7 @@ namespace SR_Editor.Modules.Character.Action
             this.xtraTabPage23.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceAktifPazarLogKayitlari)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMarketLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel10)).EndInit();
             this.tablePanel10.ResumeLayout(false);
@@ -12394,7 +12397,7 @@ namespace SR_Editor.Modules.Character.Action
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit13;
         private DevExpress.XtraGrid.GridControl gridControl4;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMarketLog;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
