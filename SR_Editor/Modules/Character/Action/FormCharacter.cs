@@ -561,13 +561,13 @@ namespace SR_Editor.Modules.Character.Action
 
         private void ListeleEsyaYukseltmeKayitlari(DateTime startDate, DateTime finishDate)
         {
-            //var api = new RoyaleSupportClient();
+            var api = new RoyaleSupportClient();
 
-            //Loading(() =>
-            //{
-            //    var data = api.GameCharacterItemRefineLog(shardId, this.hesapBilgileri.Id).ToList();
-            //    bindingSourceEsyaYukseltmeKayitlari.DataSource = data;
-            //});
+            Loading(() =>
+            {
+                var data = api.GameCharacterItemRefineLog(shardId, charId).ToList();
+                bindingSourceEsyaYukseltmeKayitlari.DataSource = data;
+            });
         }
 
         private void ListeleEsyaToplamaKayitlari(DateTime startDate, DateTime finishDate)
